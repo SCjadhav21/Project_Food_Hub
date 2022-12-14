@@ -17,6 +17,7 @@ const Restaurant = () => {
     }
     getData()
 },[])
+
 return (
     <>
     <div className='new'>
