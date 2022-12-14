@@ -25,15 +25,7 @@ import {
     return (
       <>
         <>
-          <Button
-            style={{ marginLeft: "16px" }}
-            onClick={() => {
-              setOverlay(<OverlayOne />);
-              onOpen();
-            }}
-          >
-            Sign Up
-          </Button>
+      
           <Modal isCentered isOpen={isOpen} onClose={onClose}>
             {overlay}
             <ModalContent>
