@@ -1,0 +1,63 @@
+.finder{
+
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   margin-top: 40px;
+
+}
+.finders{
+    margin-top: 5%;
+    margin-left: 20%;
+}
+.finders>h4{
+    /* margin-left: 170px; */
+    color: rgb(110, 105, 105);
+}
+.coupon{
+    height: 250px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:30px;
+    margin-top: 40px;
+}
+.coupons{
+    width: 100%;
+    height: 200px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+.anju img{
+    width: 40%;
+    margin-top: 30px;
+    margin-left:70px;
+}
+h4,p{
+    margin-left: 40px;
+
+}
+
+.bottom >h3{
+    color: rgb(161, 149, 149);
+   margin: 40px 150px 40px 110px;
+}
+
+.button>button{
+    width: 40%;
+    height: 80px;
+    margin-left: 350px;
+    background-color: rgb(214, 25, 25);
+    color: white;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+.button>button:hover{
+    cursor: pointer;
+    background-color: rgb(211, 86, 86);
+}
+
+.save{
+    width: 100%;
+    background-color: rgb(212, 198, 198);
+}
+    
