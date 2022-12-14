@@ -1,7 +1,7 @@
 import "./App.css";
+import logo from "./logo.svg";
 
 function App() {
-<<<<<<< HEAD
   return (
     <div className="App">
       <header className="App-header">
@@ -18,12 +18,8 @@ function App() {
           Learn React
         </a>
       </header>
-
     </div>
   );
-=======
-  return <div className="App"></div>;
->>>>>>> 194f46c64bb56a3095ee4de3040aec47184d8762
 }
 
 export default App;
