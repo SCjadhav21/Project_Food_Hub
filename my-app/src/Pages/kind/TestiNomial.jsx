@@ -35,6 +35,8 @@ import {
           bottom: '-16px',
           left: '50%',
           transform: 'translateX(-50%)',
+          width:"80%",
+          margin:"auto"
         }}>
         {children}
       </Stack>
