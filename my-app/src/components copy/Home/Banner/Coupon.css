@@ -39,17 +39,21 @@ h4,p{
     color: rgb(161, 149, 149);
    margin: 40px 150px 40px 110px;
 }
+.button{
+    margin: auto;
+
+}
 
 .button>button{
     width: 40%;
     height: 80px;
-    margin-left: 350px;
     background-color: rgb(214, 25, 25);
     color: white;
     padding: 20px;
     border: none;
+    margin: auto;
     border-radius: 10px;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
 }
 .button>button:hover{
     cursor: pointer;
@@ -61,3 +65,24 @@ h4,p{
     background-color: rgb(212, 198, 198);
 }
     
+@media screen and (max-width:640px) {
+    .coupon{
+        height: 290px;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap:30px;
+        margin-bottom: 70%;
+        /* margin-top: 40px; */
+    }
+    .coupons{
+        width: 100%;
+        height: 250px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
+    }
+    .button{
+        margin: auto;
+
+    }
+   
+}
