@@ -1,4 +1,4 @@
-import {Box, Button, Heading,  HStack,  Image, Link, SimpleGrid, Stack, Text} from '@chakra-ui/react'
+import {Box, Button, Heading,  HStack,  Image, Link, SimpleGrid, Stack, Text,WrapItem,Input,Select} from '@chakra-ui/react'
 import { useState } from 'react';
 import { useEffect } from 'react';
 import {  useSearchParams } from 'react-router-dom';
@@ -10,25 +10,26 @@ function KindMoments(){
     const[page,setPage] = useState((+(searchParams.get("page")))||1);
     const[totalPage,setTotalPage] = useState(1);
     const[restaurants , setRestaurants] = useState([]);
-    // const navigate = useNavigate()
-    // const {state,dispatch , userData , handleChange , handleSubmit } = useContext(AppContext);
-    // console.log('state:', state)
-    // console.log('userData:', userData)
+    const[name,setName]=useState("")
+    const[form,setForm]=useState("")
+    
 
     useEffect(() => {
       document.title = `Featured Meat-Free Deals & Vegetarian Food In Malaysia | KindMeal.my`;
     }, []);
+
+
 useEffect(()=>{
 
-    handleGetRestaurantsData(page)
-},[page])
+    handleGetRestaurantsData(page,form)
+},[page,form])
+
 useEffect(() => {
-    setSearchParams({
-      page
-    });
+    setSearchParams({page});
   }, [page, setSearchParams]);
-function handleGetRestaurantsData(page){
-    getMoments(page)
+
+function handleGetRestaurantsData(page,form){
+    getMoments(page,form)
     .then(
         res=>{
            let product =  res.data
@@ -49,13 +50,15 @@ const handlePageChange =(p)=>{
 const handleOnePageChange=(p)=>{
     setPage(page =>page+p)
 }
+const handleSubmit=(name)=>{
+    setForm(name)
 
-// console.log('restaurants:', restaurants);
-// console.log('totalPage:', totalPage)
+}
+
     return (
       <>
-      <div width="80px">
-      <TestimonialContent width="80%">
+      <div  >
+      <TestimonialContent width="80%" magin="auto">
         <HStack ml={0} alignSelf="left">
           <Heading as={'h2'} fontSize={'25px'} pr={2} borderRight="2.5px solid grey" >KindMoments </Heading>
           <Text>Saving Lives with Yummy Photos</Text>
@@ -67,9 +70,55 @@ const handleOnePageChange=(p)=>{
         <Text fontSize='16px' align='left' >Download our mobile app now to easily get coupons and start dining in a few seconds. Effortlessly save lives, health, environment and money now!</Text>
         
       </TestimonialContent>
-        <Box bgColor="gray.100" >
+        <Box bgColor="#fcfcfc" >
 
             <Pagination  totalPages={totalPage} currentPage={page} handlePageChange={handlePageChange} handleOnePageChange={handleOnePageChange} />
+            <Stack direction={['column', 'row']} spacing='24px' width={"80%"} margin="auto">
+            <WrapItem>
+                <Button colorScheme='whatsapp'>Moments</Button>
+            </WrapItem>
+            <WrapItem>
+                <Button colorScheme='gray'>Meal Deal</Button>
+            </WrapItem>
+           
+            <WrapItem>
+                <Button colorScheme='gray'>Following</Button>
+            </WrapItem>
+            <WrapItem>
+                <Button width={"240px"} colorScheme="white" disabled="yes"/ >
+            </WrapItem>
+            <WrapItem>
+            <form onSubmit={handleSubmit}>
+              <Input
+                placeholder="Search Shop Name"
+                size="md"
+                width="100%"
+                padding="15px"
+                bg="white"
+                fontSize="15px"
+                name="search"
+                onChange={(e) => setName(e.target.value)}
+                value={name}
+                type="text"
+              />
+              </form>
+             
+            </WrapItem>
+            <WrapItem>
+            <Select placeholder='All Location' size='md' >
+                <option val="mum">Mumbai</option>
+                <option val="pun">Pune</option>
+                <option val="har">Haryana</option>
+                <option val="dhe">Dheradun</option>
+                <option val="Nas">Nasik</option>
+                <option val="mp">MP</option>
+            </Select>
+            </WrapItem>
+            <WrapItem>
+                <Button colorScheme='red'  width='140px'>Search</Button>
+            </WrapItem>
+            </Stack>
+            
             <SimpleGrid columns={[1,3]} w='80%' margin='50px  auto' spacing={10} position="relative" >
                 {
                     restaurants.map(item =>(
