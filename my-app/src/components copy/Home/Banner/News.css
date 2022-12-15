@@ -30,29 +30,16 @@ p{
     color: grey;
     margin-left: 30px;
 }
-@media screen and  (max-width: 640px){
-    .lives{
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-    }
-}
-    
-/* @media screen and  (max-width: 320px){
-    .lives{
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-    }
-}
-    
 @media screen and (max-width:640px) {
     .news{
-        height: 320px;
+        height: 350px;
         
         display: grid;
         grid-template-columns: repeat(3,1fr);
-       grid-template-rows: repeat(2,250px);
+        grid-template-rows: repeat(2,350px);
         gap:6px;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        margin-bottom: 100%;
+        /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
     }
     
-} */
+}
