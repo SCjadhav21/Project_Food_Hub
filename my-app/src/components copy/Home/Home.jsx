@@ -9,6 +9,7 @@ import Restaurant from './Banner/Restaurant'
 import Meal from './Meal/Meal'
 import Meals from './Meal/Meals'
 import "./Home.css"
+
 import Coupon from"./Banner/Coupon"
 
 const Home = () => {

@@ -19,7 +19,7 @@ useEffect(()=>{
 },[page])
 return (
     <>
-    <Pagination total={7} current={page} onchange={(value) =>setPage(value)} />
+    <Pagination total={5} current={page} onchange={(value) =>setPage(value)} />
     <div className='meals'>
 {   data.map((items)=>{
     return (

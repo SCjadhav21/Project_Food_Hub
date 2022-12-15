@@ -32,3 +32,5 @@ useEffect(()=>{
 }
 
 export default Banner
+
+
