@@ -24,8 +24,8 @@ return (
 
 <h1>Yummyliciou Moments</h1>
 <h2>
-    <a href="">Secret Recipes</a>
-    <a href="">Member Hot Picks</a>
+    <a href="#">Secret Recipes</a>
+    <a href="#">Member Hot Picks</a>
    
 </h2>
 </div>

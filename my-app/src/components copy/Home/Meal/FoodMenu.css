@@ -1,0 +1,50 @@
+
+
+
+.foodmenu{
+    padding: 0% 8%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+
+}
+.food{
+    height: 260px;
+    /* border: 3px solid green; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    gap: 50px;
+    margin: 20px;
+}
+.food>img{
+    height: 210px;
+    gap: 50px;
+    
+   
+}
+
+@media screen and (max-width:640px) {
+    .foodmenu{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        /* gap: 40px; */
+    }
+    .food>img{
+        width: 340px;
+        height: 210px;
+        gap: 40px;
+    }
+}
+    @media screen and  (max-width:320px){
+        .foodmenu{
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+        }
+        .food>img{
+            width: 500px;
+            height: 210px;
+            gap: 40px;
+        }
+        
+    }
+   
+    
+    

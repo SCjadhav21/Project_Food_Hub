@@ -1,0 +1,37 @@
+
+
+.page{
+    padding: 0% 8%;
+}
+
+.bottom{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:40px;
+    
+}
+.buttons{
+    
+    height: 50px;
+   margin-left: 250px;
+    color: aquamarine;
+    gap: 100px;
+    color: brown;
+    justify-content: space-between;
+}
+.bottom2{
+    
+        height: 70%;
+        display: grid;
+       
+        grid-template-columns: repeat(4,1fr);
+        gap:4px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+     .bottom2>img{
+        height: 157px;
+     }
+     
+
+    
+     
