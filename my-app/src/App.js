@@ -1,21 +1,12 @@
-// import Navbar from "./Components/Navbar";
+import React from "react";
+import Navbar from "./Components/Navbar";
 
-import AddRacipes from "./Backend/Racepes/AddRacipes";
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <Navbar />
-//     </div>
-//   );
-// }
-
-// export default App;
 function App() {
   return (
     <div className="App">
-      <AddRacipes />
+      <Navbar />
     </div>
   );
 }
+
 export default App;
