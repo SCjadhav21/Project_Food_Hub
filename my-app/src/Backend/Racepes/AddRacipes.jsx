@@ -14,32 +14,54 @@ import {
 import { useState } from "react";
 import { useEffect } from "react";
 // import { Link } from "react-router-dom";
+let IntialData = {
+  id: Date.now(),
+  channel: "",
+  name: "",
+  followers: Math.floor(Math.random() * 50),
+  img: "",
+  logo: "",
+  banner: "",
+  time: "",
+  servings: "",
+  rating: Math.floor(Math.random() * 5),
+  ingredients: [],
+  directions: [],
+  morepics: [],
+  bannerII: "https://www.kindmeal.my/images/banner_recipe.jpg",
+};
 const AddRacipes = () => {
   let [input, setInput] = useState("");
   let [idData, setIdData] = useState(Date.now());
-
-  let [racipeData, setRacipeData] = useState({
-    id: idData,
-    channel: "",
-    name: "",
-    followers: Math.floor(Math.random() * 50),
-    img: "",
-    logo: "",
-    banner: "",
-    time: "",
-    servings: "",
-    rating: Math.floor(Math.random() * 5),
-    ingredients: [],
-    directions: [],
-    morepics: [],
-    bannerII: "",
-  });
+  console.log(idData);
+  let [racipeData, setRacipeData] = useState(IntialData);
+  console.log(racipeData);
 
   let j = input.trim().split("\n");
   let url = "https://prakash-vercel-database.vercel.app/kindmealRecipes";
   useEffect(() => {
     axios.get(url).then((res) => setIdData(res.data.length + 1));
   }, []);
+
+  const handleChange = (e) => {
+    let { value, name } = e.target;
+    if (name === "directions") {
+      value = value.trim().split("\n");
+    }
+    if (name === "ingredients") {
+      value = value.trim().split("\n");
+    }
+    if (name === "morepics") {
+      value = value.trim().split("\n");
+    }
+    setRacipeData({ ...racipeData, [name]: value });
+  };
+
+  const handleSubmit = () => {
+    setRacipeData({ ...racipeData, id: idData });
+    setRacipeData({ ...racipeData, banner: racipeData.logo });
+    console.log(racipeData, idData);
+  };
 
   return (
     <Box
@@ -124,6 +146,8 @@ const AddRacipes = () => {
               >
                 <FormLabel>Recipe Name</FormLabel>
                 <Input
+                  name="name"
+                  onChange={handleChange}
                   width="70%"
                   placeholder="Recipe name"
                   justifyContent="space-between"
@@ -135,7 +159,12 @@ const AddRacipes = () => {
                 isRequired
               >
                 <FormLabel>Channel name</FormLabel>
-                <Input width="70%" placeholder="Channel name" />
+                <Input
+                  name="channel"
+                  onChange={handleChange}
+                  width="70%"
+                  placeholder="Channel name"
+                />
               </FormControl>
               <FormControl
                 isRequired
@@ -143,7 +172,13 @@ const AddRacipes = () => {
                 justifyContent="space-between"
               >
                 <FormLabel>Recipe Image </FormLabel>
-                <Input type="url" width="70%" placeholder="Recipe Image Url" />
+                <Input
+                  name="img"
+                  onChange={handleChange}
+                  type="url"
+                  width="70%"
+                  placeholder="Recipe Image Url"
+                />
               </FormControl>
               <FormControl
                 justifyContent="space-between"
@@ -152,6 +187,8 @@ const AddRacipes = () => {
               >
                 <FormLabel>Servings</FormLabel>
                 <Input
+                  name="servings"
+                  onChange={handleChange}
                   type="url"
                   width="70%"
                   placeholder="Quantity of items produced, i.e. '5 Cupcakes'"
@@ -162,8 +199,28 @@ const AddRacipes = () => {
                 isRequired
                 display="flex"
               >
+                <FormLabel>Time Taken</FormLabel>
+                <Input
+                  name="time"
+                  onChange={handleChange}
+                  type="url"
+                  width="70%"
+                  placeholder="Time to make racepi in min"
+                />
+              </FormControl>
+              <FormControl
+                justifyContent="space-between"
+                isRequired
+                display="flex"
+              >
                 <FormLabel>Channel logo</FormLabel>
-                <Input type="url" width="70%" placeholder="Channel logo url" />
+                <Input
+                  name="logo"
+                  onChange={handleChange}
+                  type="url"
+                  width="70%"
+                  placeholder="Channel logo url"
+                />
               </FormControl>
               <FormControl
                 display="flex"
@@ -175,7 +232,8 @@ const AddRacipes = () => {
                   <Text>
                     One item per line{" "}
                     <Textarea
-                      onChange={(e) => setInput(e.target.value)}
+                      name="ingredients"
+                      onChange={handleChange}
                       height=" 150px"
                       borderRadius="10px"
                       type="text"
@@ -196,6 +254,8 @@ const AddRacipes = () => {
                   <Text>
                     One step per line{" "}
                     <Textarea
+                      name="directions"
+                      onChange={handleChange}
                       height=" 150px"
                       borderRadius="10px"
                       type="text"
@@ -215,7 +275,8 @@ const AddRacipes = () => {
                   <Text>
                     One Image per line{" "}
                     <Textarea
-                      onChange={(e) => setInput(e.target.value)}
+                      name="morepics"
+                      onChange={handleChange}
                       height=" 150px"
                       borderRadius="10px"
                       type="url"
@@ -228,7 +289,12 @@ const AddRacipes = () => {
             </Box>
           </Box>
           <Box mt="30px" display="flex" w="full" justifyContent="flex-start">
-            <Button w="50%" color="#fff" bgColor="#F53838">
+            <Button
+              onClick={handleSubmit}
+              w="50%"
+              color="#fff"
+              bgColor="#F53838"
+            >
               Create Racipe
             </Button>
           </Box>
