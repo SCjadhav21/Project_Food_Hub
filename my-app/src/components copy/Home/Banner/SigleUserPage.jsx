@@ -93,6 +93,7 @@ const SigleUserPage = () => {
                 Tel:012-2192622
             </p>
 
+            <br />
             <h3>Terms & Conditions</h3>
             <h4>Coupon Validity</h4>
             <p>Must use Coupon by Dec 21st,2022</p>
