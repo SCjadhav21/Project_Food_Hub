@@ -1,3 +1,4 @@
+
 import axios from 'axios'
 import React from 'react'
 import { useEffect } from 'react'
@@ -40,18 +41,19 @@ const Coupon = () => {
         }
 
     </div>
-    <div className='bottom'>
+    <div className='bottomm'>
     <h3>Any restaurant or cafe can join KindMeal, vegetarian or not, as long as the deals and menu featured are meat-free.
         Enjoy a great meat-free dining experience. Easily save animal lives, health, environment and money now!</h3>
-            <div className='button'>
+            
+    </div>
+    <div className='button'>
             <button><h1>Join KindMeal Now </h1>
                 <h5>Your Tasty Journery Begins Here</h5>
             </button>
             </div>
     </div>
-    </div>
     <div className='save'>
-        <img  style={{width:"80%",marginLeft:"80px"}} src='https://www.kindmeal.my/images/banner_whykindmeal.png' />
+        <img  style={{width:"80%"}} src='https://www.kindmeal.my/images/banner_whykindmeal.png' />
 
     </div>
     </>
