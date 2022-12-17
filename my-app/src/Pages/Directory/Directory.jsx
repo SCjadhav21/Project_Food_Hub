@@ -5,7 +5,7 @@ import './Directory.css'
 import axios from 'axios'
 import RecipesAndDirectoryPagination from '../../Components/RecipesAndDirectoryPagination';
 
-export default function Directory() {
+export default function Articles() {
     const [page, setPage] = useState(1)
     const [arr, setArr] = useState([])
     const [text, setText] = useState('')
