@@ -4,7 +4,7 @@ import Card from "./Cart";
 import { useEffect, useState } from "react";
 import { getaddress } from "./api";
 import Pagination from "./Pagination";
-
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 const getCurrentPageFromUrl = (value) => {
   value = Number(value);
   if (typeof value === "number" && value <= 0) {
@@ -18,7 +18,9 @@ const getCurrentPageFromUrl = (value) => {
 
 const Article = () => {
   const [data, setData] = useState([]);
-  const [page, setPage] = useState(1);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const initialPage = getCurrentPageFromUrl(searchParams.get("page"));
+  const [page, setPage] = useState(initialPage);
   const [find, setfind] = useState("");
   const [country, setCountry] = useState("");
   const fetchCitiesDataAndUpdate = (page, find, country) => {
@@ -32,6 +34,10 @@ const Article = () => {
   useEffect(() => {
     fetchCitiesDataAndUpdate(page, find, country);
   }, [page, find, country]);
+  
+  useEffect(() => {
+    setSearchParams({ page });
+  }, [page]);
 
   const getData = (el) => {
     setfind(el);
