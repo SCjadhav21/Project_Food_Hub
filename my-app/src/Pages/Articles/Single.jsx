@@ -10,15 +10,16 @@ const SingleUserPage = () => {
   const [userDetails, setUserDetails] = React.useState({});
 
   React.useEffect(() => {
-    getData(`https://kindmeal-db.onrender.com/address/${id}`).then((res) =>
-      setUserDetails(res.data)
+    getData(`https://kindmeal-db.onrender.com/address/2`).then((res) =>
+      setUserDetails(res)
+      //console.log(res)
     );
-  }, [user_id]);
+  }, [id]);
 
   // console.log(userDetails);
   return (
     <>
-      <img src={userDetails.avatar} alt="prof-pic" />
+      <img src={userDetails.avtar} alt="prof-pic" />
       <p>
         Name : {userDetails.first_name} {userDetails.last_name}
       </p>
