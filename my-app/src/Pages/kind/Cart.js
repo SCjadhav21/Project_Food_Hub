@@ -7,9 +7,11 @@ import {
   Image,
   Box,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 const Card = ({ id, name, des, phone, foodimg, opening, avtar }) => {
   return (
     <GridItem
+      key={id}
       spacing="20px"
       paddingTop="20px"
       textAlign="left"
@@ -31,7 +33,9 @@ const Card = ({ id, name, des, phone, foodimg, opening, avtar }) => {
           borderRadius="50%"
         />
         <Text fontSize="20px">{name}</Text>
-        <Button colorScheme="red">View</Button>
+        <Button colorScheme="red">
+          <Link to={`/kindmoments/${id}`}>View</Link>
+        </Button>
       </Grid>
       <Image
         src={foodimg}

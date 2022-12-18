@@ -7,7 +7,7 @@ const Banners = () => {
     const [data,setData]=useState([])
 useEffect(()=>{
     const getData = async()=>{
-        let res=await axios.get("https://server1-b406.onrender.com/banners")
+        let res=await axios.get("https://reduxapi.onrender.com/banners")
         console.log(res);
         setData(res.data)
 

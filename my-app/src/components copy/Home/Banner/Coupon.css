@@ -53,9 +53,8 @@ h4,p{
     padding: 20px;
     border: none;
     border-radius: 10px;
-    /* margin: auto; */
-    margin-left: 250px;
-    margin-bottom: 30px;
+    margin: auto;
+    
 }
 .button>button:hover{
     cursor: pointer;
@@ -66,5 +65,23 @@ h4,p{
     width: 100%;
     background-color: rgb(212, 198, 198);
     margin-bottom: 30px;
+}
+
+
+@media screen and (max-width:640px) {
+    .coupon{
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap:30px;
+        margin-top: 40px;
+    }
+    .coupons{
+        width: 100%;
+        height: auto;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
+    }
+    
 }
     

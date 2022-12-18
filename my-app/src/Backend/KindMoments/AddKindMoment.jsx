@@ -16,14 +16,15 @@ import {
   FormControl,
   Input,
 } from "@chakra-ui/react";
+import axios from "axios";
 let IntialData = {
   id: Date.now(),
 
-  photo: "",
+  foodimg: "",
 
   place: "",
 
-  descrition: "",
+  description: "",
 };
 function AddKindMoment() {
   let [kindMoment, setKindMoment] = useState(IntialData);
@@ -35,16 +36,18 @@ function AddKindMoment() {
   };
   const handleSubmit = () => {
     console.log(kindMoment);
-    if (kindMoment.photo && kindMoment.place && kindMoment.descrition) {
-      //   axios
-      //     .post("https://mock-server-app-pzg9.onrender.com/kindmealRecipes", {
-      //       ...shopData,
-      //     })
-      //     .catch(function (error) {
-      //       console.log(error);
-      //     });
-      setKindMoment(IntialData);
-      onClose();
+    if (kindMoment.foodimg && kindMoment.place && kindMoment.description) {
+      axios
+        .post("https://kindmeal-db.onrender.com/address", {
+          ...kindMoment,
+        })
+        .then((res) => {
+          setKindMoment(IntialData);
+          onClose();
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     } else {
       alert("Please fill all required fields");
     }
@@ -76,11 +79,11 @@ function AddKindMoment() {
                 <FormLabel w="30%">Add Photo</FormLabel>
 
                 <Input
-                  name="photo"
+                  name="foodimg"
                   onChange={handleChange}
-                  type="email"
+                  type="url"
                   width="70%"
-                  value={kindMoment.photo}
+                  value={kindMoment.foodimg}
                   placeholder="+ Add Photo url"
                 />
               </FormControl>
@@ -94,7 +97,7 @@ function AddKindMoment() {
                 <Input
                   name="place"
                   onChange={handleChange}
-                  type="url"
+                  type="text"
                   width="70%"
                   value={kindMoment.place}
                   placeholder="Where is the place?"
@@ -110,11 +113,11 @@ function AddKindMoment() {
                 <Box w="70%">
                   <Textarea
                     type="text"
-                    name="descrition"
+                    name="description"
                     onChange={handleChange}
                     height=" 150px"
                     borderRadius="10px"
-                    // value={kindMoment.descrition}
+                    // value={kindMoment.description}
                     placeholder="Describe your yummylicious moment..."
                   />
                 </Box>

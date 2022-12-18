@@ -8,7 +8,7 @@ const Heroes = () => {
     const [data,setData]=useState([])
     useEffect(()=>{
     const getData = async()=>{
-        let res=await axios.get("https://server1-b406.onrender.com/hero")
+        let res=await axios.get("https://reduxapi.onrender.com/hero")
         console.log(res);
         setData(res.data)
 
@@ -21,7 +21,7 @@ return (
 <div className='lives'>
 
 <h1>Amazing Superheroes</h1>
-<h2>
+<h2 id='on'>
     <a href="">Latest Buzz</a>
     <a href="">Lifestyles Ambassadors</a>
    
