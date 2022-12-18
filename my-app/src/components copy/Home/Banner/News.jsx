@@ -9,7 +9,7 @@ const News = () => {
     const [data,setData]=useState([])
     useEffect(()=>{
     const getData = async()=>{
-        let res=await axios.get("https://server1-b406.onrender.com/news")
+        let res=await axios.get("https://reduxapi.onrender.com/news")
         console.log(res);
         setData(res.data)
 
@@ -22,7 +22,7 @@ return (
 <div className='lives'>
 
 <h1>Latest News & Videos</h1>
-<h2>
+<h2 id='on'>
     <a href="">News and  Articles</a>
     <a href="">Follow on Facebook</a>
 </h2>

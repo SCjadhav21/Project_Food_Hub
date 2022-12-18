@@ -1,8 +1,10 @@
 
-
 import React from 'react'
+import { useLocation } from 'react-router-dom'
 import "./SigleUserPage.css"
 const SigleUserPage = () => {
+    const location=useLocation()
+   
   return (
     <>
     <div className='page'>
@@ -17,17 +19,26 @@ const SigleUserPage = () => {
         <button>Meal Deal</button>
 
         <button>Food Menu</button>
-
-
-
-        
     </div>
 
-   <div>
+   <div className='location'>
 
-        <img src="https://www.kindmeal.my/photos/deal/7/709-4950-m.jpg" />
+        <img src={location.state.img } />
+        <div>
+        <h1>{location.state.title}</h1>
+        <p>{location.state.title2}</p>
+        <h5>{location.state.description}</h5>
+        <img src={location.state.rating } />
+        <h5 style={{marginLeft:"80px"}}>{location.state.dis}</h5>
+        <h3 style={{marginLeft:"80px",color:"red"}}>{location.state.rate2}</h3>
+        <h5 style={{marginLeft:"80px"}}>{location.state.dis2}</h5>
+        <h3 style={{marginLeft:"80px",color:"red"}}>{location.state.rate2}</h3>
+
+
+
+        </div>
+        
    </div>
-   
    
     </div>
 
@@ -93,7 +104,6 @@ const SigleUserPage = () => {
                 Tel:012-2192622
             </p>
 
-            <br />
             <h3>Terms & Conditions</h3>
             <h4>Coupon Validity</h4>
             <p>Must use Coupon by Dec 21st,2022</p>

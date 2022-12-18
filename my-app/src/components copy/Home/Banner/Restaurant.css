@@ -1,70 +1,60 @@
-.moment{
+
+
+.nam{
     
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin-top:40px;
 
 }
-.live{
+.livess{
     display: flex;
     justify-content: space-between;
 }
 a{
     margin-left: 30px;
 }
-.mom{
-
-    display: grid;
+.cold{
     height: 300px;
+    display: grid;
     grid-template-columns: repeat(5,1fr);
     gap:6px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-.imgs img{
+.imgg img{
     height:240px;
     margin-left: -30px;
     width: 100%;
- 
 }
-
 p{
     color: grey;
-    margin-left: 30px;
+    /* margin-left: 30px; */
 }
-
 @media screen and (max-width:640px) {
-    .moment{
-    height: auto;
-    display: grid;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        gap:5px;
-        margin-bottom: 60%;
-    
-    }
-    .mom{
+    .cold{
+        height: auto;
         display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap:10px;
+        grid-template-columns: repeat(3,1fr);
+        gap:6px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
-    #hot{
+    #dir{
         display: none;
+
     }
     
 }
 
 @media screen and (max-width:320px) {
-    .moment{
+    .cold{
         height: auto;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        gap:5px;
-    
-    }
-    .mom{
         display: grid;
-    grid-template-columns: repeat(1,1fr);
-    gap:10px;
+        grid-template-columns: repeat(1,1fr);
+        gap:6px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
-
-    #hot{
+    #dir{
         display: none;
+
     }
     
 }
