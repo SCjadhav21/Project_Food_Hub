@@ -3,7 +3,7 @@ import {
   GridItem,
   Button,
   Text,
-  Divider,
+  Heading,
   Image,
   Box,
 } from "@chakra-ui/react";
@@ -12,19 +12,16 @@ const Card = ({ id, name, des, phone, foodimg, opening, avtar }) => {
   return (
     <GridItem
       key={id}
-      spacing="20px"
       paddingTop="20px"
-      textAlign="left"
       rowGap="50px"
-      padding="25px"
-      boxShadow="dark-lg"
+      boxShadow="md"
       p="6"
       rounded="md"
       bg="white"
       borderRadius="15px"
       id={id}
     >
-      <Grid templateColumns="repeat(3,1fr)">
+      <Grid templateColumns="repeat(3,1fr)" gap={"-10px"}>
         <Image
           src={avtar}
           alt={name}
@@ -32,7 +29,7 @@ const Card = ({ id, name, des, phone, foodimg, opening, avtar }) => {
           width="50px"
           borderRadius="50%"
         />
-        <Text fontSize="20px">{name}</Text>
+        <Heading fontSize={["18px", "", "16px"]}>{name}</Heading>
         <Button colorScheme="red">
           <Link to={`/kindmoments/${id}`}>View</Link>
         </Button>

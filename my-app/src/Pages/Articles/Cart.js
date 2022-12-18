@@ -30,7 +30,7 @@ const Card = ({ id, articlesimg, articletitle, description }) => {
           <Heading size={["m", "l", "xl"]}>{articletitle}</Heading>
           <Text>{description}</Text>
           <br />
-          <Link to={`/article/${id}`}><Button colorScheme="red">View Articles</Button></Link>
+          <Button colorScheme="red"><Link to={`/article/${id}`}>View Articles</Link></Button>
         </Box>
       </Stack>
     </GridItem>

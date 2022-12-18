@@ -93,57 +93,63 @@ const Directory1 = (props) => {
           </Text>
           <Text fontSize="l">Get started sharing your tasty moments now.</Text>
 
-          <Stack spacing="95px" paddingTop="30px" direction="row">
-            <Box width="25%">
-              <form onSubmit={handlesubmit}>
+            {/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */}
+            <Stack direction={['column', 'row']} spacing='34px' width={"500"}>
+                <Box  h='20px' >
+                <form onSubmit={handlesubmit}>
                 <Input
                   placeholder="Search Shop Name"
                   size="md"
                   width="100%"
                   padding="20px"
                   bg="white"
-                  fontSize="20px"
+                  fontSize="15px"
                   name="search"
                   onChange={(e) => setName(e.target.value)}
                   value={name}
                   type="text"
                 />
               </form>
-            </Box>
-            <Box width="50%" height="20px">
-              <select
-                name="country"
-                value={country}
-                onClick={handlesubmit1}
-                onChange={(e) => setCountry(e.target.value)}
-              >
-                <option padding="15px">All Shops in Malashiya</option>
-                <option value="Berjaye Cafe">Berjaye Cafe</option>
-                <option value="Berjaye Cafe">Berjaye Cafe</option>
-                <option value="Ba-Xian Cafe">Ba-Xian Cafe</option>
-                <option value="Arti Wodless Cafe">Arti Wodless Cafe</option>
-              </select>
-            </Box>
-            <Box width="15%">
-              <Button
-                bg="red"
-                borderRadius="5px"
-                color="White"
-                fontSize="22px"
-                size="md"
-                width="100%"
-              >
-                Search Shop
-              </Button>
-            </Box>
+                </Box>
+                
+                <Box  height="20px" fontSize="15px" margin="auto" padding={"5px"}>
+                  <select
+                    name="country"
+                    value={country}
+                    
+                    onClick={handlesubmit1}
+                    onChange={(e) => setCountry(e.target.value)}
+                  >
+                    <option padding="15px">All Shops in Malashiya</option>
+                    <option value="Berjaye Cafe">Berjaye Cafe</option>
+                    <option value="Berjaye Cafe">Berjaye Cafe</option>
+                    <option value="Ba-Xian Cafe">Ba-Xian Cafe</option>
+                    <option value="Arti Wodless Cafe">Arti Wodless Cafe</option>
+                  </select>
+                </Box>
+                
+                <Box  h='40px' marginLeft={"10px"} >
+                    <Button
+                    bg="red"
+                    borderRadius="5px"
+                    color="White"
+                    fontSize="22px"
+                    size={["sm","sm","md"]}
+                    width={["100px","120px","120px"]}
+                  >
+                    Search Shop
+                  </Button>
+                </Box>
+               
+              
             <Box width="15%">
               <Button
                 bg="green"
                 borderRadius="5px"
                 color="White"
                 fontSize="22px"
-                size="md"
-                width="100%"
+                size={["sm","sm","md"]}
+                width={["100px","120px","120px"]}
                 onClick={onOpen}
               >
                 Add a Shop

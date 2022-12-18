@@ -3,10 +3,8 @@ import { Box, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import Card from "./Cart";
 import { useEffect, useState } from "react";
 import { getaddress } from "./api";
-
 import Pagination from "./Pagination";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
-
 const getCurrentPageFromUrl = (value) => {
   value = Number(value);
   if (typeof value === "number" && value <= 0) {
@@ -48,7 +46,7 @@ const Article = () => {
   };
 
   return (
-    <Box p="0px 8%" pt={["60px", " ", "160px"]}>
+    <Box  pt={["60px", " ", "160px"]}>
       {/* ################################################################# */}
       <Directory1 onSubmit={getData} onSubmit1={getcount} />
       {/* ########################################################################## */}
