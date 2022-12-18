@@ -25,23 +25,17 @@ let IntialData = {
   time: "",
   servings: "",
   rating: Math.floor(Math.random() * 5),
-  ingredients: [],
-  directions: [],
-  morepics: [],
+  ingredients: "",
+  directions: "",
+  morepics: "",
   bannerII: "https://www.kindmeal.my/images/banner_recipe.jpg",
 };
 const AddRacipes = () => {
   let [input, setInput] = useState("");
-  let [idData, setIdData] = useState(Date.now());
-  console.log(idData);
-  let [racipeData, setRacipeData] = useState(IntialData);
-  console.log(racipeData);
 
-  let j = input.trim().split("\n");
-  let url = "https://prakash-vercel-database.vercel.app/kindmealRecipes";
-  useEffect(() => {
-    axios.get(url).then((res) => setIdData(res.data.length + 1));
-  }, []);
+  let [racipeData, setRacipeData] = useState(IntialData);
+
+  let url = "https://mock-server-app-pzg9.onrender.com/kindmealRecipes";
 
   const handleChange = (e) => {
     let { value, name } = e.target;
@@ -54,13 +48,37 @@ const AddRacipes = () => {
     if (name === "morepics") {
       value = value.trim().split("\n");
     }
+    if (name === "logo") {
+      setRacipeData({ ...racipeData, banner: value });
+    }
     setRacipeData({ ...racipeData, [name]: value });
   };
 
   const handleSubmit = () => {
-    setRacipeData({ ...racipeData, id: idData });
-    setRacipeData({ ...racipeData, banner: racipeData.logo });
-    console.log(racipeData, idData);
+    if (
+      racipeData.name &&
+      racipeData.channel &&
+      racipeData.img &&
+      racipeData.servings &&
+      racipeData.time &&
+      racipeData.logo &&
+      racipeData.channel &&
+      racipeData.img &&
+      racipeData.ingredients &&
+      racipeData.directions &&
+      racipeData.morepics
+    ) {
+      axios
+        .post("https://mock-server-app-pzg9.onrender.com/kindmealRecipes", {
+          ...racipeData,
+        })
+
+        .catch(function (error) {
+          console.log(error);
+        });
+    } else {
+      alert("Please fill all required fields");
+    }
   };
 
   return (
@@ -144,11 +162,12 @@ const AddRacipes = () => {
                 justifyContent="space-between"
                 isRequired
               >
-                <FormLabel>Recipe Name</FormLabel>
+                <FormLabel w="30%">Recipe Name</FormLabel>
                 <Input
                   name="name"
                   onChange={handleChange}
                   width="70%"
+                  value={racipeData.name}
                   placeholder="Recipe name"
                   justifyContent="space-between"
                 />
@@ -163,6 +182,7 @@ const AddRacipes = () => {
                   name="channel"
                   onChange={handleChange}
                   width="70%"
+                  value={racipeData.channel}
                   placeholder="Channel name"
                 />
               </FormControl>
@@ -171,9 +191,10 @@ const AddRacipes = () => {
                 display="flex"
                 justifyContent="space-between"
               >
-                <FormLabel>Recipe Image </FormLabel>
+                <FormLabel w="30%">Recipe Image </FormLabel>
                 <Input
                   name="img"
+                  value={racipeData.img}
                   onChange={handleChange}
                   type="url"
                   width="70%"
@@ -185,12 +206,13 @@ const AddRacipes = () => {
                 isRequired
                 display="flex"
               >
-                <FormLabel>Servings</FormLabel>
+                <FormLabel w="30%">Servings</FormLabel>
                 <Input
                   name="servings"
                   onChange={handleChange}
                   type="url"
                   width="70%"
+                  value={racipeData.servings}
                   placeholder="Quantity of items produced, i.e. '5 Cupcakes'"
                 />
               </FormControl>
@@ -199,12 +221,13 @@ const AddRacipes = () => {
                 isRequired
                 display="flex"
               >
-                <FormLabel>Time Taken</FormLabel>
+                <FormLabel w="30%">Time Taken</FormLabel>
                 <Input
                   name="time"
                   onChange={handleChange}
                   type="url"
                   width="70%"
+                  value={racipeData.time}
                   placeholder="Time to make racepi in min"
                 />
               </FormControl>
@@ -213,12 +236,13 @@ const AddRacipes = () => {
                 isRequired
                 display="flex"
               >
-                <FormLabel>Channel logo</FormLabel>
+                <FormLabel w="30%">Channel logo</FormLabel>
                 <Input
                   name="logo"
                   onChange={handleChange}
                   type="url"
                   width="70%"
+                  value={racipeData.logo}
                   placeholder="Channel logo url"
                 />
               </FormControl>
@@ -227,7 +251,7 @@ const AddRacipes = () => {
                 justifyContent="space-between"
                 isRequired
               >
-                <FormLabel>Ingredients</FormLabel>
+                <FormLabel w="30%">Ingredients</FormLabel>
                 <Box w="70%">
                   <Text>
                     One item per line{" "}
@@ -237,6 +261,7 @@ const AddRacipes = () => {
                       height=" 150px"
                       borderRadius="10px"
                       type="text"
+                      // value={racipeData.ingredients}
                       placeholder="List the quantity & ingredients needed"
                     />
                     {/* <Input  /> */}
@@ -249,7 +274,7 @@ const AddRacipes = () => {
                 isRequired
                 display="flex"
               >
-                <FormLabel>Directions</FormLabel>
+                <FormLabel w="30%">Directions</FormLabel>
                 <Box w="70%">
                   <Text>
                     One step per line{" "}
@@ -259,6 +284,7 @@ const AddRacipes = () => {
                       height=" 150px"
                       borderRadius="10px"
                       type="text"
+                      // value={racipeData.directions}
                       placeholder="List the steps to create the meal"
                     />
                   </Text>
@@ -269,17 +295,18 @@ const AddRacipes = () => {
                 justifyContent="space-between"
                 display="flex"
               >
-                <FormLabel>Add more pics</FormLabel>
+                <FormLabel w="30%">Add more pics</FormLabel>
 
                 <Box w="70%">
                   <Text>
                     One Image per line{" "}
                     <Textarea
+                      type="url"
                       name="morepics"
                       onChange={handleChange}
                       height=" 150px"
                       borderRadius="10px"
-                      type="url"
+                      // value={racipeData.morepics}
                       placeholder="Recipe Image Url"
                     />
                     {/* <Input  /> */}
