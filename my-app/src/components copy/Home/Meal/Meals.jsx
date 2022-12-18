@@ -5,6 +5,7 @@ import { useState } from 'react'
 import axios from "axios"
 import"./Meals.css"
 import Pagination from "./Pagination"
+import { NavLink } from 'react-router-dom'
 const Meals = () => {
     const [data,setData]=useState([])
     const [page,setPage]=useState(1)
@@ -19,15 +20,20 @@ useEffect(()=>{
 },[page])
 return (
     <>
-    <Pagination total={5} current={page} onchange={(value) =>setPage(value)} />
+    <Pagination total={7} current={page} onchange={(value) =>setPage(value)} />
     <div className='meals'>
 {   data.map((items)=>{
     return (
         <div className='image'>
+            <NavLink state={{img:items.url ,title:items.title}} to="/compo" >
+
         <img  src={items.url} alt="images"/>
-       
+        </NavLink>
         <h3 style={{marginLeft:"40px"}}>{items.title} 
         </h3>
+           
+       
+        
         <p>{items.title2}</p>
        
         <h5 style={{marginLeft:"40px"}} >{items.description}</h5>
@@ -39,9 +45,9 @@ return (
         <h3 style={{color:'red'}}>{items.rate}</h3>
         <h5>{items.dis2}</h5>
         <h3 style={{color:'red'}}>{items.rate2}</h3>
-
-        </div>
     </div>
+       
+        </div>
     )
    })}
   

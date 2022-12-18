@@ -47,7 +47,7 @@ const Search = () => {
         </div>
         <div>
 
-<button className='Deal'  >Search Deal</button>
+<button  style={{backgroundColor:"green",width:"130px"}}className='Deal'  >Search Deal</button>
  </div>
  <div>
 
