@@ -8,7 +8,7 @@ const FoodMenu = () => {
     const [data,setData]=useState([])
     useEffect(()=>{
     const getData = async()=>{
-        let res=await axios.get("http://localhost:8080/foodmenu")
+        let res=await axios.get("https://reduxapi.onrender.com/foodmenu")
         console.log(res);
         setData(res.data)
 

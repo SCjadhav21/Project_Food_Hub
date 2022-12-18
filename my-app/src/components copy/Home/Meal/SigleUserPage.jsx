@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom'
 import "./SigleUserPage.css"
 const SigleUserPage = () => {
     const location=useLocation()
-    console.log("data from single usr",location.state.img);
+   
   return (
     <>
     <div className='page'>
@@ -24,9 +24,21 @@ const SigleUserPage = () => {
    <div className='location'>
 
         <img src={location.state.img } />
-        {/* <img src="https://www.kindmeal.my/photos/deal/7/709-4950-m.jpg" /> */}
+        <div>
+        <h1>{location.state.title}</h1>
+        <p>{location.state.title2}</p>
+        <h5>{location.state.description}</h5>
+        <img src={location.state.rating } />
+        <h5 style={{marginLeft:"80px"}}>{location.state.dis}</h5>
+        <h3 style={{marginLeft:"80px",color:"red"}}>{location.state.rate2}</h3>
+        <h5 style={{marginLeft:"80px"}}>{location.state.dis2}</h5>
+        <h3 style={{marginLeft:"80px",color:"red"}}>{location.state.rate2}</h3>
+
+
+
+        </div>
+        
    </div>
-   
    
     </div>
 

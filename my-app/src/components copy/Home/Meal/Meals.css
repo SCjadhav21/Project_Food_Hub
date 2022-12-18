@@ -71,3 +71,26 @@
     color: blue;
     cursor: pointer;
 }
+
+
+@media screen and(max-width:640px) {
+    .meals{
+        width: 90%;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        /* grid-template-rows: repeat(5,600px); */
+        gap:60px;
+        padding: 0% 8%;
+        margin-bottom: 50px;
+        margin: auto;   
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+ 
+    }
+    .image img{
+        width: 90%;
+        height: auto;
+    
+    }
+    
+}

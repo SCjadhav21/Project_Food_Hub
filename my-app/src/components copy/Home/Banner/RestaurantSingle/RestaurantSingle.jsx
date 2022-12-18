@@ -7,14 +7,12 @@ import "./RestaurantSingle.css"
 
 const RestaurantSingle = () => {
   const location=useLocation()
-  console.log("data from user",location.state.img)
 
 
   const [data,setData]=useState([]);
   useEffect(() =>{
     const getData=async () =>{
-      let res=await axios.get(" http://localhost:8080/restaruntsingle")
-    console.log(res)
+      let res=await axios.get("https://reduxapi.onrender.com/restaruntsingle")
     setData(res.data)
     
     }
@@ -27,9 +25,9 @@ const RestaurantSingle = () => {
     <div>
       <img style={{  height:"250px"}} src="https://www.kindmeal.my/photos/shop/5/583-c.jpg" />
     </div>
-    <div>
+    <div className='single'>
     <img  style={{width:"60%",height:"350px"}}src={location.state.img} />
-    
+    <h4 style={{marginLeft:"350px"}}>{location.state.title}</h4>
 
     </div>
     <div className='restro'>
