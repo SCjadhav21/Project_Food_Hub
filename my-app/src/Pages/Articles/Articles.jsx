@@ -1,13 +1,28 @@
-import Directory1 from "./Kind1";
+import Directory1 from "./Articles1";
 import { Box, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import Card from "./Cart";
 import { useEffect, useState } from "react";
 import { getaddress } from "./api";
-import Pagination from "./Pagination";
 
-const Kind = () => {
+import Pagination from "./Pagination";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
+
+const getCurrentPageFromUrl = (value) => {
+  value = Number(value);
+  if (typeof value === "number" && value <= 0) {
+    value = 1;
+  }
+  if (!value) {
+    value = 1;
+  }
+  return value;
+};
+
+const Article = () => {
   const [data, setData] = useState([]);
-  const [page, setPage] = useState(1);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const initialPage = getCurrentPageFromUrl(searchParams.get("page"));
+  const [page, setPage] = useState(initialPage);
   const [find, setfind] = useState("");
   const [country, setCountry] = useState("");
   const fetchCitiesDataAndUpdate = (page, find, country) => {
@@ -21,6 +36,10 @@ const Kind = () => {
     fetchCitiesDataAndUpdate(page, find, country);
   }, [page, find, country]);
 
+  useEffect(() => {
+    setSearchParams({ page });
+  }, [page]);
+
   const getData = (el) => {
     setfind(el);
   };
@@ -29,7 +48,7 @@ const Kind = () => {
   };
 
   return (
-    <Box>
+    <Box p="0px 8%" pt={["60px", " ", "160px"]}>
       {/* ################################################################# */}
       <Directory1 onSubmit={getData} onSubmit1={getcount} />
       {/* ########################################################################## */}
@@ -53,18 +72,14 @@ const Kind = () => {
       </Stack>
 
       {/* ########################################################################## */}
-      <Box width={"80%"} margin="auto">
-        <SimpleGrid columns={[1, 2, 3]} spacing="40px" width={"50"}>
+      <Box width={"60%"} margin="auto">
+        <SimpleGrid columns={[1, 1, 1]} spacing="40px">
           {data.map((el) => (
             <Card
               id={el.id}
-              name={el.name}
-              des={el.description}
-              phone={el.phone}
-              opening={el.opening}
-              address={el.address}
-              avtar={el.avtar}
-              foodimg={el.foodimg}
+              articlesimg={el.articlesimg}
+              articletitle={el.articletitle}
+              description={el.description}
             />
           ))}
         </SimpleGrid>
@@ -73,4 +88,4 @@ const Kind = () => {
   );
 };
 
-export default Kind;
+export default Article;

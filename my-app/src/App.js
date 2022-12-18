@@ -1,13 +1,16 @@
-import React from "react"
-import Navbar from './Components/Navbar';
+import React from "react";
+import Meal from "./components copy/Home/Meal/Meal";
+import Navbar from "./Components/Navbar";
+
+import Directory from "./Pages/Directory/Directory";
+import { AllRoutes } from "./Routes/AllRoutes";
 
 function App() {
   return (
     <div className="App">
-     <Navbar/>
-
+      <Navbar />
+      <AllRoutes />
     </div>
-
   );
 }
 
