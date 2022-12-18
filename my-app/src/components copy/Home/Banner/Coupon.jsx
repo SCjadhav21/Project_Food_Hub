@@ -8,7 +8,7 @@ const Coupon = () => {
     const[data,setData]=useState([])
     useEffect(()=>{
         const getdata= async() =>{
-            let res=await axios.get("https://server1-b406.onrender.com/coupon");
+            let res=await axios.get("https://reduxapi.onrender.com/coupon");
             console.log(res)
             setData(res.data);
 
@@ -47,8 +47,8 @@ const Coupon = () => {
             
     </div>
     <div className='button'>
-            <button><h1>Join KindMeal Now </h1>
-                <h5>Your Tasty Journery Begins Here</h5>
+            <button style={{marginLeft:"200px",marginBottom:"30px"}}><h1>Join KindMeal Now </h1>
+                {/* <h5>Your Tasty Journery Begins Here</h5> */}
             </button>
             </div>
     </div>

@@ -1,21 +1,29 @@
 
-
 .main{
     padding: 0% 8%;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+
 }
 .restro{
     width: 95%;
     display: grid;
     grid-template-columns: repeat(5,1fr);
-    gap: 10px;
-    /* margin-left: 20px; */
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 
-.mains >img{
-    width: 95%;
-    height: 250px;
+.mains img{
+    width: 90%;
+    height: 200px;
+    gap: 3px;
+}
+.single{
+    height: 400px;
+    justify-content: center;
+    margin-bottom: 40px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 
-    border: 1px solid black;
+}
+.single>img{
+    margin-left: 200px;
 }
