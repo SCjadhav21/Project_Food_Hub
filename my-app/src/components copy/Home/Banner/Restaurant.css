@@ -22,12 +22,15 @@ a{
 }
 .imgg img{
     height:240px;
-    margin-left: -30px;
+    /* margin-left: -30px; */
     width: 100%;
 }
 p{
     color: grey;
     /* margin-left: 30px; */
+}
+#dir{
+    color: blue;
 }
 @media screen and (max-width:640px) {
     .cold{

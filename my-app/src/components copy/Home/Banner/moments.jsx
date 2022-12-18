@@ -24,8 +24,9 @@ const Moments = () => {
             <div className='moment'>
                 <div className='live'>
 
-                    <h1>Yummyliciou Moments</h1>
+                    <h1 style={{fontSize:"30px"}}>Yummyliciou Moments</h1>
                     <h2 id='hot'>
+                        <a href='' >Photo Moments</a>
                         <a href="">Secret Recipes</a>
                         <a href="">Member Hot Picks</a>
 
@@ -44,9 +45,11 @@ const Moments = () => {
 
                                         <img src={items.url} alt="" />
                                     </NavLink>
-                                </div>
+                               
                                 <h5>{items.title}</h5>
                                 <p>{items.add}</p>
+                                
+                            </div>
                             </div>
                         )
                     })}

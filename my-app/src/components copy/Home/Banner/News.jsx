@@ -21,8 +21,9 @@ return (
     <div className='new'>
 <div className='lives'>
 
-<h1>Latest News & Videos</h1>
+<h1 style={{fontSize:"30px"}}>Latest News & Videos</h1>
 <h2 id='on'>
+    <a href="">Save Lives with your blogs</a>
     <a href="">News and  Articles</a>
     <a href="">Follow on Facebook</a>
 </h2>

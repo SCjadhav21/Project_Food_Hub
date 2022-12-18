@@ -21,7 +21,7 @@ return (
     <div className='nam'>
 <div className='livess'>
 
-<h1>Discover Restaurants</h1>
+<h1  style={{fontSize:"30px"}}>Discover Restaurants</h1>
 
 <h2 id='dir'>
     <a href="">Vegetarian Directory</a>

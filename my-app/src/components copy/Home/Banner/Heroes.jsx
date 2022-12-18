@@ -20,7 +20,7 @@ return (
     <div className='new'>
 <div className='lives'>
 
-<h1>Amazing Superheroes</h1>
+<h1 style={{fontSize:"30px"}}>Amazing Superheroes</h1>
 <h2 id='on'>
     <a href="">Latest Buzz</a>
     <a href="">Lifestyles Ambassadors</a>
