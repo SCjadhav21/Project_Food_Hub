@@ -2,13 +2,13 @@ import axios from 'axios'
 import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
-import './Articles.css'
+import './Kind.css'
 import { AiFillTwitterCircle, AiFillLike, AiFillStar, AiFillQuestionCircle } from "react-icons/ai";
 import { MdOutlineFacebook } from "react-icons/md";
 import { useParams } from 'react-router-dom'
 import {Text} from "@chakra-ui/react"
 
-export default function SingleArticlePage() {
+export default function SingleKindPage() {
     const [obj, setobj] = useState({})
     const { id } = useParams();
     useEffect(() => {
@@ -19,34 +19,27 @@ export default function SingleArticlePage() {
     return (
         <div>
             <div className='bannerSectionRecipe' >
-                <img src="https://images.unsplash.com/photo-1614851099175-e5b30eb6f696?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGJhbm5lcnxlbnwwfHwwfHw%3D&w=1000&q=80"  alt="food" />
+                <img src={obj.foodimg}  alt="food" />
                 
             </div>
             <div className='recipeimgdiscontainer' >
+            <br/> <br/> <br/> <br/>
                 <p className='recipeimgheading' >{obj.articletitle}</p>
+                
                 <div className='recipeimgdis' >
-                    <div>
-                        <img src={obj.articlesimg} alt="articlesimg" />
+                    <div width="30px">
+                        <img src={obj.avtar} alt="articlesimg" />
                     </div>
                     <div>
                         <div className='grid4' >
                             <div>
-                                <p>Time</p>
-                                <span>{obj.time}</span>
+                            <img src="https://img.freepik.com/free-photo/flat-lay-batch-cooking-composition_23-2148765597.jpg?w=2000" alt="articlesimg" />
+                            
                             </div>
                             <div>
-                                <p>Servings</p>
-                                <span>{obj.servings}</span>
+                            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80" alt="articlesimg" />
                             </div>
-                            <div>
-                                <p>Diet Restriction &nbsp; <AiFillQuestionCircle color='#898989' /></p>
-                                <p>---</p>
-                            </div>
-                            <div>
-                                <p>Rating</p>
-                                <p><AiFillStar color='#ececec' /><AiFillStar color='#ececec' /><AiFillStar color='#ececec' /><AiFillStar color='#ececec' /><AiFillStar color='#ececec' /></p>
-                                <p>1 Vote</p>
-                            </div>
+                            
                         </div>
                         <div >
                             <p><AiFillLike color='blue' /> <span>MarionSeow likes this</span></p>
