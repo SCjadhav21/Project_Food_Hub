@@ -30,11 +30,10 @@ const Article = () => {
       .finally(() => console.log("call completed"));
   };
 
-
   useEffect(() => {
     fetchCitiesDataAndUpdate(page, find, country);
   }, [page, find, country]);
-  
+
   useEffect(() => {
     setSearchParams({ page });
   }, [page]);
@@ -47,7 +46,7 @@ const Article = () => {
   };
 
   return (
-    <Box>
+    <Box p="0px 8%" pt={["60px", " ", "160px"]}>
       {/* ################################################################# */}
       <Directory1 onSubmit={getData} onSubmit1={getcount} />
       {/* ########################################################################## */}

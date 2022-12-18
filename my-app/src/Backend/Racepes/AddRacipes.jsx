@@ -83,9 +83,9 @@ const AddRacipes = () => {
 
   return (
     <Box
-      mt="30px"
-      w="100%"
       p="0px 8%"
+      pt={["60px", " ", "160px"]}
+      w="100%"
       display="flex"
       gap={5}
       flexDirection={["column", "", "row"]}
@@ -116,7 +116,7 @@ const AddRacipes = () => {
             display="flex"
           >
             <Link pt="8px">Manage My Coupons</Link>
-            <Link>Manage My Recipes</Link>
+            <Link href="/recipes">Manage My Recipes</Link>
             <Link pt="8px">Update Profile</Link>
             <Link>Account Settings</Link>
 
@@ -141,7 +141,7 @@ const AddRacipes = () => {
             </Text>
           </Box>
           <Box mt="20px" color="blue">
-            <Link>◀ Return To My Recipes</Link>
+            <Link href="/recipes">◀ Return To My Recipes</Link>
           </Box>
         </Box>
         <Box mt="50px" p="0px 10px">
