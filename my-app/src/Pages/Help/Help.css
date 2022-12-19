@@ -43,3 +43,11 @@
     margin-top: 20px;
     font-weight: 500;
 }
+@media screen and (max-width:500px){
+    .mainhelpcontainer>div:nth-child(2) p{
+        font-size: 14px;
+    }
+    .mainhelpcontainer>div:nth-child(1) p{
+        font-size: 14px;
+    }
+}

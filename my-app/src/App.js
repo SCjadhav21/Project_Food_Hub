@@ -1,15 +1,15 @@
 import React from "react";
-import Meal from "./components copy/Home/Meal/Meal";
+import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 
-import Directory from "./Pages/Directory/Directory";
 import { AllRoutes } from "./Routes/AllRoutes";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" >
       <Navbar />
       <AllRoutes />
+      <Footer/>
     </div>
   );
 }

@@ -23,24 +23,24 @@
 }
 
 .searchdirectory input {
-  border: 1px solid rgba(0, 0, 0, 0.322);
-  padding: 5px 10px;
-  border-radius: 5px;
-  width: 30%;
-  background-color: white;
-  font-weight: normal;
-  text-align: left;
-  height: 40px;
-  outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.322);
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 30%;
+    background-color: white;
+    font-weight: normal;
+    text-align: left;
+    height: 40px;
+    outline: none;
 }
 
 .searchdirectory select {
-  border: 1px solid rgba(0, 0, 0, 0.322);
-  padding: 5px 10px;
-  border-radius: 5px;
-  width: 20%;
-  font-weight: normal;
-  outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.322);
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 20%;
+    font-weight: normal;
+    outline: none;
 }
 
 .searchdirectory button {
@@ -260,29 +260,29 @@
 }
 
 .directorybannersection {
-  /* border: 1px solid red; */
-  /* height: 320px; */
-  margin-bottom: -150px;
+    /* border: 1px solid red; */
+    /* height: 320px; */
+    margin-bottom: -150px;
 }
 
 .logocontener {
-  /* border: 1px solid red; */
-  display: flex;
-  align-items: flex-end;
-  padding-left: 10%;
-  position: relative;
-  bottom: 170px;
-  font-size: 17px;
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: flex-end;
+    padding-left: 10%;
+    position: relative;
+    bottom: 170px;
+    font-size: 17px;
 }
 
 .bannerinformation {
-  /* border: 1px solid green; */
-  padding-left: 10px;
-  display: flex;
-  align-items: flex-end;
-  gap: 20px;
-  width: 80%;
-  background-color: rgba(255, 255, 255, 0.6);
+    /* border: 1px solid green; */
+    padding-left: 10px;
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.6);
 }
 
 .logocontener img {
@@ -291,9 +291,9 @@
 }
 
 .logocontener .directoryname {
-  font-size: 30px;
-  font-weight: 500;
-  color: black;
+    font-size: 30px;
+    font-weight: 500;
+    color: black;
 }
 
 .logocontener div {
@@ -302,14 +302,14 @@
 }
 
 .discriptiondirectory {
-  /* border: 1px solid blue; */
-  box-shadow: 0px -5px 19px -14px rgba(0, 0, 0, 0.75);
-  display: flex;
-  height: auto;
-  width: 85%;
-  margin: auto;
-  padding-bottom: 20px;
-  margin-top: 50px;
+    /* border: 1px solid blue; */
+    box-shadow: 0px -5px 19px -14px rgba(0, 0, 0, 0.75);
+    display: flex;
+    height: auto;
+    width: 85%;
+    margin: auto;
+    padding-bottom: 20px;
+    margin-top: 50px;
 }
 
 .discriptiondirectory img {
@@ -323,10 +323,10 @@
 }
 
 .discriptiondirectorysecond {
-  display: grid;
-  grid-template-columns: 30% 70%;
-  font-size: 17px;
-  line-height: 40px;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    font-size: 17px;
+    line-height: 40px;
 }
 
 .discriptiondirectorysecond a {
@@ -353,12 +353,12 @@
 }
 
 .discriptiondirectorylong {
-  /* border: 1px solid blue; */
-  width: 85%;
-  margin: auto;
-  padding: 20px;
-  box-shadow: 0px 12px 19px -14px rgba(0, 0, 0, 0.75);
-  background-color: #fdfdfd;
+    /* border: 1px solid blue; */
+    width: 85%;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0px 12px 19px -14px rgba(0, 0, 0, 0.75);
+    background-color: #fdfdfd;
 }
 
 .discriptiondirectorylong p:nth-child(1) {
@@ -402,177 +402,54 @@
   margin: auto;
 }
 
-.directorylastdiv > div:nth-child(1) {
-  width: 30%;
-  border-radius: 10px;
-  box-shadow: 0px -1px 19px -14px rgba(0, 0, 0, 0.75);
-  padding: 15px;
+
+
+.directorylastdiv>div:nth-child(1) {
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: 0px -1px 19px -14px rgba(0, 0, 0, 0.75);
+    padding: 15px;
 }
 
-.directorylastdiv > div:nth-child(1) img {
-  width: 100%;
-}
-
-.directorylastdiv > div:nth-child(1) p:nth-child(1) {
-  font-size: 25px;
-  background-color: #f0f0f0;
-  margin-top: 0px;
-}
-
-.directorylastdiv > div:nth-child(2) {
-  width: 70%;
-}
-
-.directorylastdiv > div:nth-child(2) > :nth-child(1) {
-  /* border: 1px solid salmon; */
-  border-radius: 10px;
-  box-shadow: 0px -1px 19px -14px rgba(0, 0, 0, 0.75);
-  padding: 15px;
-  margin-bottom: 20px;
-}
-
-.directorylastdiv > div:nth-child(2) > :nth-child(1) p:nth-child(1) {
-  font-size: 25px;
-  background-color: #f0f0f0;
-  margin-top: 0px;
-}
-
-.directorylastdiv > div:nth-child(2) > :nth-child(1) p:nth-child(2) {
-  font-size: 25px;
-}
-
-.directorylastdiv > div:nth-child(2) > :nth-child(2) {
-  /* border: 1px solid rgb(114, 134, 250); */
-  display: flex;
-  justify-content: space-between;
-  border-radius: 10px;
-  box-shadow: 0px -1px 19px -14px rgba(0, 0, 0, 0.75);
-  padding: 15px;
-}
-
-.directorylastdiv > div:nth-child(2) > :nth-child(2) img {
-  width: 17%;
-}
-
-@media all and (max-width: 900px) {
-  .logocontener img {
-    height: 150px;
-  }
-
-  .logocontener {
-    bottom: 120px;
-  }
-}
-
-@media all and (max-width: 800px) {
-  .directorycontainer {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .directorycontainer > div > div {
-    font-size: 13px;
-  }
-
-  .searchdirectory {
-    font-size: 10px;
-  }
-
-  .searchdirectory button {
-    padding: 5px;
-  }
-
-  .extrasearch {
-    font-size: 10px;
-  }
-
-  .extrasearch p {
-    padding: 5px;
-  }
-
-  .recipesAndDirectoryPagination button {
-    font-size: 10px;
-    padding: 5px;
-  }
-
-  .discriptiondirectory {
-    flex-direction: column;
-    margin-bottom: 350px;
-  }
-
-  .discriptiondirectory > div {
+.directorylastdiv>div:nth-child(1) img {
     width: 100%;
-  }
-
-  .discriptiondirectorylong {
-    /* border: 1px solid rgb(0, 26, 255); */
-    margin-top: -290px;
-  }
 }
 
-@media all and (max-width: 680px) {
-  .logocontener img {
-    height: 100px;
-  }
-
-  .logocontener {
-    bottom: 75px;
-  }
-
-  .bannerinformation {
-    gap: 10px;
-  }
-
-  .logocontener p {
-    font-size: 13px;
-  }
-
-  .logocontener .directoryname {
-    font-size: 22px;
-  }
-
-  .directorybannersection {
-    margin-bottom: -100px;
-  }
-  .directorylastdiv p:nth-child(1) {
-    font-size: 13px;
-  }
-
-  .directorylastdiv p {
-    font-size: 10px;
-  }
-  .directorylastdiv > div:nth-child(1) p:nth-child(1) {
-    font-size: 15px;
-  }
-  .directorylastdiv > div:nth-child(2) > :nth-child(1) {
-    padding: 5px;
-  }
-  .directorylastdiv > div:nth-child(1) {
-    padding: 5px;
-  }
-  .directorylastdiv > div:nth-child(2) > :nth-child(1) p:nth-child(2) {
-    font-size: 20px;
-  }
-  .directorylastdiv > div:nth-child(2) > :nth-child(1) p:nth-child(1) {
-    font-size: 20px;
-  }
+.directorylastdiv>div:nth-child(1) p:nth-child(1) {
+    font-size: 25px;
+    background-color: #f0f0f0;
+    margin-top: 0px;
 }
 
-@media all and (max-width: 500px) {
-  .logocontener .directoryname {
-    font-size: 20px;
-  }
+.directorylastdiv>div:nth-child(2) {
+    width: 70%;
+}
 
-  .logocontener img {
-    height: 80px;
-  }
+.directorylastdiv>div:nth-child(2)>:nth-child(1) {
+    /* border: 1px solid salmon; */
+    border-radius: 10px;
+    box-shadow: 0px -1px 19px -14px rgba(0, 0, 0, 0.75);
+    padding: 15px;
+    margin-bottom: 20px;
+}
 
-  .bannerinformation {
-    gap: 5px;
-  }
+.directorylastdiv>div:nth-child(2)>:nth-child(1) p:nth-child(1) {
+    font-size: 25px;
+    background-color: #f0f0f0;
+    margin-top: 0px;
+}
 
-  .logocontener {
-    bottom: 61px;
-  }
+.directorylastdiv>div:nth-child(2)>:nth-child(1) p:nth-child(2) {
+    font-size: 25px;
+}
+
+.directorylastdiv>div:nth-child(2)>:nth-child(2) {
+    /* border: 1px solid rgb(114, 134, 250); */
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: 0px -1px 19px -14px rgba(0, 0, 0, 0.75);
+    padding: 15px;
 }
 
 @media all and (max-width: 419px) {
@@ -595,4 +472,149 @@
   .logocontener p {
     font-size: 7px;
   }
+}
+
+@media all and (max-width:900px) {
+    .logocontener img {
+        height: 150px;
+    }
+
+    .logocontener {
+        bottom: 120px;
+    }
+}
+
+@media all and (max-width:800px) {
+    .directorycontainer {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .directorycontainer>div>div {
+        font-size: 13px;
+    }
+
+    .searchdirectory {
+        font-size: 10px;
+    }
+
+    .searchdirectory button {
+        padding: 5px;
+    }
+
+    .extrasearch {
+        font-size: 10px;
+    }
+
+    .extrasearch p {
+        padding: 5px;
+    }
+
+    .recipesAndDirectoryPagination button {
+        font-size: 10px;
+        padding: 5px;
+    }
+
+    .discriptiondirectory {
+        flex-direction: column;
+        margin-bottom: 350px;
+    }
+
+    .discriptiondirectory>div {
+        width: 100%;
+    }
+
+    .discriptiondirectorylong {
+        /* border: 1px solid rgb(0, 26, 255); */
+        margin-top: -290px;
+    }
+}
+
+@media all and (max-width:680px) {
+    .logocontener img {
+        height: 100px;
+    }
+
+    .logocontener {
+        bottom: 75px;
+    }
+
+    .bannerinformation {
+        gap: 10px;
+    }
+
+    .logocontener p {
+        font-size: 13px;
+    }
+
+    .logocontener .directoryname {
+        font-size: 22px;
+    }
+
+    .directorybannersection {
+        margin-bottom: -100px;
+    }
+    .directorylastdiv p:nth-child(1) {
+        font-size: 13px;
+    }
+
+    .directorylastdiv p {
+        font-size: 10px;
+    }
+    .directorylastdiv>div:nth-child(1) p:nth-child(1){
+        font-size: 15px;
+    }
+    .directorylastdiv>div:nth-child(2)>:nth-child(1){
+        padding: 5px;
+    }
+    .directorylastdiv>div:nth-child(1){
+        padding: 5px;
+    }
+    .directorylastdiv>div:nth-child(2)>:nth-child(1) p:nth-child(2){
+        font-size: 20px;
+    }
+    .directorylastdiv>div:nth-child(2)>:nth-child(1) p:nth-child(1) {
+        font-size: 20px;
+    }
+}
+
+@media all and (max-width:500px) {
+    .logocontener .directoryname {
+        font-size: 20px;
+    }
+
+    .logocontener img {
+        height: 80px;
+    }
+
+    .bannerinformation {
+        gap: 5px;
+    }
+
+    .logocontener {
+        bottom: 61px;
+    }
+
+}
+
+@media all and (max-width:419px) {
+    .logocontener .directoryname {
+        font-size: 15px;
+    }
+
+    .logocontener img {
+        height: 60px;
+    }
+
+    .bannerinformation {
+        gap: 5px;
+    }
+
+    .logocontener {
+        bottom: 48px;
+    }
+
+    .logocontener p {
+        font-size: 7px;
+    }
+
 }

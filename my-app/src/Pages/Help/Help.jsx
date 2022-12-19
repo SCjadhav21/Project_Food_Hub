@@ -4,11 +4,8 @@ import "./Help.css";
 
 export default function Help() {
   return (
-    <Box
-      p="0px 8%"
-      pt={["60px", " ", "160px"]}
-      style={{ backgroundColor: "#fcfcfc" }}
-    >
+    <>
+    <div className="speacer" >Speacer</div>
       <div className="mainhelpcontainer">
         <div>
           <div>
@@ -205,6 +202,6 @@ export default function Help() {
           </p>
         </div>
       </div>
-    </Box>
+    </>
   );
 }

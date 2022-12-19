@@ -6,18 +6,16 @@ import { useParams } from "react-router-dom";
 
 export default function SingleDirectory() {
   const [obj, setObj] = React.useState({});
-  const { directoryId } = useParams();
+  const {directoryId}=useParams()
   React.useEffect(() => {
     axios
-      .get(
-        `https://prakash-vercel-database.vercel.app/kindmealDirectory/${directoryId}`
-      )
+      .get(`https://prakash-vercel-database.vercel.app/kindmealDirectory/${directoryId}`)
       .then((res) => setObj(res.data));
   }, []);
 
   return (
     <>
-      <div className="speacer"></div>
+      <div className="speacer" ></div>
       <div className="directorybannersection">
         <div>
           <img height="320px" width="100%" src={obj.banner} alt="" />
@@ -27,7 +25,7 @@ export default function SingleDirectory() {
             <img src={obj.logo} alt="" />
           </div>
           <div className="bannerinformation">
-            <div>
+            <div >
               <p className="directoryname">{obj.name}</p>
               <p>Overview</p>
             </div>
