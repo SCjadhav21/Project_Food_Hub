@@ -114,7 +114,7 @@ const Navbar = () => {
             </Link>
             <Link
               style={{ fontSize: "18px", color: "#fff", fontWeight: "bold" }}
-              to="/"
+              to="/directory"
             >
               Directory
             </Link>

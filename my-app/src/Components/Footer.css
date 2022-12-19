@@ -3,6 +3,10 @@
     background-color: #2bb673;
     padding: 10px;
     font-size: 13px;
+    margin-top: 50px;
+}
+.footer p{
+    color: white;
 }
 .footercontener {
     /* border: 1px solid salmon; */
@@ -13,6 +17,7 @@
 }
 
 .footercontener h2 {
+    color: white;
     font-weight: 500;
 }
 @media all and (max-width:800px){

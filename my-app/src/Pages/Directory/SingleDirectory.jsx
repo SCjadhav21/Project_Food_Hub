@@ -2,17 +2,20 @@ import React from "react";
 import "./Directory.css";
 import axios from "axios";
 import { Box } from "@chakra-ui/react";
+import { useParams } from "react-router-dom";
 
 export default function SingleDirectory() {
   const [obj, setObj] = React.useState({});
+  const {directoryId}=useParams()
   React.useEffect(() => {
     axios
-      .get(`https://prakash-vercel-database.vercel.app/kindmealDirectory/${1}`)
+      .get(`https://prakash-vercel-database.vercel.app/kindmealDirectory/${directoryId}`)
       .then((res) => setObj(res.data));
   }, []);
 
   return (
-    <Box p="0px 8%" pt={["60px", " ", "160px"]}>
+    <>
+      <div className="speacer" ></div>
       <div className="directorybannersection">
         <div>
           <img height="320px" width="100%" src={obj.banner} alt="" />
@@ -21,18 +24,20 @@ export default function SingleDirectory() {
           <div>
             <img src={obj.logo} alt="" />
           </div>
-          <div>
-            <p className="directoryname">{obj.name}</p>
-            <p>Overview</p>
-          </div>
-          <div>
-            <p>Meal Deals</p>
-          </div>
-          <div>
-            <p>Food Menu</p>
-          </div>
-          <div>
-            <p>Location</p>
+          <div className="bannerinformation">
+            <div >
+              <p className="directoryname">{obj.name}</p>
+              <p>Overview</p>
+            </div>
+            <div>
+              <p>Meal Deals</p>
+            </div>
+            <div>
+              <p>Food Menu</p>
+            </div>
+            <div>
+              <p>Location</p>
+            </div>
           </div>
         </div>
       </div>
@@ -105,6 +110,6 @@ export default function SingleDirectory() {
           <div>{obj.images && obj.images.map((ele) => <img src={ele} />)}</div>
         </div>
       </div>
-    </Box>
+    </>
   );
 }
