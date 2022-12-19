@@ -18,6 +18,7 @@ import { RiLinksLine } from "react-icons/ri";
 import { FaFacebook, FaTwitter } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import Login from "./Login";
+import Image from "../foodHub2.png";
 import SignUp from "./Signup";
 
 const Navbar = () => {
@@ -35,10 +36,7 @@ const Navbar = () => {
             }}
           >
             <Box style={{ padding: "0.75rem" }}>
-              <Img
-                src="https://www.kindmeal.my/images/logo-kindmeal.png"
-                alt="Logo"
-              />
+              <Img src={Image} alt="Logo" w="250px" h="95px" />
             </Box>
             <Box style={{ display: "flex", gap: "2rem" }}>
               <a href="https://www.kindmeal.my/widget.htm">
@@ -159,11 +157,7 @@ const Navbar = () => {
           justifyItems="center"
         >
           <Box>
-            <Img
-              pl="30px"
-              src="https://www.kindmeal.my/images/logo-kindmeal.png"
-              alt="Logo"
-            />
+            <Img pl="30px" w="30%" src={Image} alt="Logo" />
           </Box>
           <Box>
             {" "}
