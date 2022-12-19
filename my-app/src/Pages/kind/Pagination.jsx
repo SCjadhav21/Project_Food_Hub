@@ -11,7 +11,6 @@ export default function Pagination({
     const pages = new Array(total).fill(0).map((a,i)=>
     <Button  colorScheme='teal' variant='outline' onClick={()=>onChange(i+1)} disabled={current=== (i+1)} >{i+1}</Button>
     )
-
   return <div>
     {prev}
       {pages}
