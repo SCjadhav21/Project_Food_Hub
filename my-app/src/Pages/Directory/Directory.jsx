@@ -4,7 +4,7 @@ import { useState } from "react";
 import "./Directory.css";
 import axios from "axios";
 import RecipesAndDirectoryPagination from "../../Components/RecipesAndDirectoryPagination";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 
 export default function Directory() {
   const [page, setPage] = useState(1);
@@ -27,7 +27,7 @@ export default function Directory() {
 
   return (
     <>
-      <div className="speacer">Speacer</div>
+      <div className="speacer" >Speacer</div>
       <div className="directoryintro">
         <h1>Vegetarian Restaurants In Malaysia</h1>
         <p>

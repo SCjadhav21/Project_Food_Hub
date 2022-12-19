@@ -7,7 +7,6 @@ import { AiOutlineClockCircle, AiTwotoneMessage } from "react-icons/ai";
 import { BsFillHeartFill } from "react-icons/bs";
 import RecipesAndDirectoryPagination from "../../Components/RecipesAndDirectoryPagination";
 import { Link } from "react-router-dom";
-import { Box } from "@chakra-ui/react";
 
 const getData = (url) => {
   return axios.get(url);
@@ -21,16 +20,18 @@ export default function Recipes() {
 
   useEffect(() => {
     getData(
-      `https://prakash-vercel-database.vercel.app/kindmealRecipes?_page=${page}&_limit=12&q=${que}`
+      `https://mock-server-app-pzg9.onrender.com/kindmealRecipes?_page=${page}&_limit=12&q=${que}`
     ).then((res) => setArr(res.data));
   }, [que, page]);
+
 
   const handelsearchrecipes = () => {
     setQue(text);
   };
 
   return (
-    <Box p="0px 8%" pt={["60px", " ", "160px"]} className="recipepage">
+    <>
+      <div className="speacer">Speacer</div>
       <div className="recipesintro">
         <p>
           Food & Drinks{" "}
@@ -95,7 +96,7 @@ export default function Recipes() {
                 <p>{ele.channel}</p>
               </div>
               <div>
-                <button>
+                <button >
                   <Link to={`/recipes/${ele.id}`}>View</Link>
                 </button>
               </div>
@@ -127,6 +128,6 @@ export default function Recipes() {
         current={page}
         onchange={(value) => setpage(value)}
       />
-    </Box>
+    </>
   );
 }

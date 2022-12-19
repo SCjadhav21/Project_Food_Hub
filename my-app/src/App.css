@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+
+img:hover{
+  cursor: pointer;
+
+=======
 * {
   margin: 0;
   padding: 0;
@@ -5,4 +11,5 @@
 
 img:hover {
   cursor: pointer;
+>>>>>>> f99cbca94f1a6760e093237d32b559e8b853fbcd
 }

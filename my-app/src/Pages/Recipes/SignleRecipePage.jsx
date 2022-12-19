@@ -11,7 +11,6 @@ import {
 } from "react-icons/ai";
 import { MdOutlineFacebook } from "react-icons/md";
 import { useParams } from "react-router-dom";
-import { Box } from "@chakra-ui/react";
 
 export default function SignleRecipePage() {
   const [obj, setobj] = useState({});
@@ -25,7 +24,8 @@ export default function SignleRecipePage() {
   }, []);
 
   return (
-    <Box p="0px 8%" pt={["60px", " ", "160px"]}>
+    <>
+    <div className="speacer">Speacer</div>
       <div className="bannerSectionRecipe">
         <img src={obj.banner} alt="" />
         <div>
@@ -141,6 +141,6 @@ export default function SignleRecipePage() {
         </div>
       </div>
       <img className="bannerII" src={obj.bannerII} alt="" />
-    </Box>
+    </>
   );
 }

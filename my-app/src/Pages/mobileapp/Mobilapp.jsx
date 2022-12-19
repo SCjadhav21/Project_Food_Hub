@@ -4,11 +4,8 @@ import "./Mobilapp.css";
 
 export default function Mobilapp() {
   return (
-    <Box
-      p="0px 8%"
-      pt={["60px", " ", "160px"]}
-      style={{ backgroundColor: "#fcfcfc" }}
-    >
+    <>
+    <div className="speacer" >Speacer</div>
       <div className="mobilappintro">
         <h1>KindMeal Mobile Apps on iOS & Android</h1>
         <p>
@@ -46,6 +43,6 @@ export default function Mobilapp() {
           />
         </a>
       </div>
-    </Box>
+    </>
   );
 }
