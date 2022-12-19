@@ -1,25 +1,25 @@
 .directoryintro {
-    /* border: 1px solid red; */
-    background-color: #f0f0f0;
-    text-align: left;
-    padding: 20px 8%;
-    line-height: 30px;
-    color: #564744;
+  /* border: 1px solid red; */
+  background-color: #f0f0f0;
+  text-align: left;
+  padding: 20px 8%;
+  line-height: 30px;
+  color: #564744;
 }
 
 .directoryintro h1 {
-    font-size: 25px;
-    padding-bottom: 20px;
+  font-size: 25px;
+  padding-bottom: 20px;
 }
 
 .searchdirectory {
-    /* border: 1px solid blueviolet; */
-    display: flex;
-    justify-content: space-between;
-    padding: 0% 8%;
-    color: #666666;
-    background-color: #f0f0f0;
-    padding-bottom: 20px;
+  /* border: 1px solid blueviolet; */
+  display: flex;
+  justify-content: space-between;
+  padding: 0% 8%;
+  color: #666666;
+  background-color: #f0f0f0;
+  padding-bottom: 20px;
 }
 
 .searchdirectory input {
@@ -44,220 +44,219 @@
 }
 
 .searchdirectory button {
-    color: white;
-    padding: 0px 20px;
-    border-radius: 5px;
-    font-weight: 500;
+  color: white;
+  padding: 0px 20px;
+  border-radius: 5px;
+  font-weight: 500;
 }
 
 .searchdirectory button:nth-child(3) {
-    background-color: #f53838;
+  background-color: #f53838;
 }
 
 .searchdirectory button:nth-child(4) {
-    background-color: #04be5a;
+  background-color: #04be5a;
 }
 
 .activepage {
-    color: black;
-    border: 1px solid rgba(0, 0, 0, 0.484);
-    padding: 0px 7px;
-    color: #676e7a;
-    cursor: pointer;
-    background-color: white;
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.484);
+  padding: 0px 7px;
+  color: #676e7a;
+  cursor: pointer;
+  background-color: white;
 }
 
 .searchdirectory button {
-    border: none;
+  border: none;
 }
 
 .recipesAndDirectoryPagination {
-    /* border: 1px solid rgb(56, 203, 81); */
-    background-color: #fcfcfc;
-    display: flex;
-    padding: 10px 8%;
-    justify-content: space-between;
-    color: #676e7a;
+  /* border: 1px solid rgb(56, 203, 81); */
+  background-color: #fcfcfc;
+  display: flex;
+  padding: 10px 8%;
+  justify-content: space-between;
+  color: #676e7a;
 }
 
 .recipesAndDirectoryPagination button {
-    padding: 3px 15px;
-    color: #676e7a;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    background-color: #e8e8e8;
+  padding: 3px 15px;
+  color: #676e7a;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background-color: #e8e8e8;
 }
 
 .recipesAndDirectoryPagination div {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .notactivepage {
-    color: blue;
-    cursor: pointer;
+  color: blue;
+  cursor: pointer;
 }
 
 .extrasearch {
-    /* border: 1px solid green; */
-    display: flex;
-    justify-content: space-between;
-    padding: 30px 8%;
-    background-color: #fcfcfc;
+  /* border: 1px solid green; */
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 8%;
+  background-color: #fcfcfc;
 }
 
 .extrasearch p {
-    border: 1px solid rgba(0, 0, 0, 0.201);
-    padding: 5px 20px;
-    background-color: #f8f8f8;
-    color: #666666;
-    border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.201);
+  padding: 5px 20px;
+  background-color: #f8f8f8;
+  color: #666666;
+  border-radius: 5px;
 }
 
 .extrasearch p:hover {
-    background-color: #2bb673;
-    color: white;
+  background-color: #2bb673;
+  color: white;
 }
 
 .directorycontainer {
-    /* border: 1px solid blue; */
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1% 3%;
-    width: 100%;
-    padding: 0% 9%;
-    text-align: left;
-    color: #444444;
-    background-color: #fcfcfc;
-    padding-bottom: 150px;
+  /* border: 1px solid blue; */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1% 3%;
+  width: 100%;
+  padding: 0% 9%;
+  text-align: left;
+  color: #444444;
+  background-color: #fcfcfc;
+  padding-bottom: 150px;
 }
 
 .directorycontainer img {
-    margin: 10px 0px;
-    width: 100%;
+  margin: 10px 0px;
+  width: 100%;
 }
 
 .directorycontainer h1 {
-    font-size: 25px;
+  font-size: 25px;
 }
 
 .directorycontainer span {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
-.directorycontainer>div>p:nth-child(2) {
-    padding-bottom: 20px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.267);
+.directorycontainer > div > p:nth-child(2) {
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.267);
 }
 
-.directorycontainer>div>div {
-    /* border: 1px solid firebrick; */
-    display: flex;
-    justify-content: space-between;
-    gap: 1%;
-    color: #2586ff;
-    font-size: 16px;
-    font-weight: 500;
+.directorycontainer > div > div {
+  /* border: 1px solid firebrick; */
+  display: flex;
+  justify-content: space-between;
+  gap: 1%;
+  color: #2586ff;
+  font-size: 16px;
+  font-weight: 500;
 }
 
-.directorycontainer>div {
-    box-shadow: 0px 0px 11px -5px rgba(0, 0, 0, 0.75);
-    padding: 20px;
-    border-radius: 10px;
-    background-color: white;
+.directorycontainer > div {
+  box-shadow: 0px 0px 11px -5px rgba(0, 0, 0, 0.75);
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
 }
 
 .directoryheading {
-    margin-top: 15px;
-    font-size: 18px;
-    font-weight: 500;
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .nearbyshopcontainer {
-    /* border: 1px solid red; */
-    width: 84%;
-    margin: auto;
-    display: flex;
-    gap: 5%;
+  /* border: 1px solid red; */
+  width: 84%;
+  margin: auto;
+  display: flex;
+  gap: 5%;
 }
 
 .nearbyshopcontainer div {
-    /* border: 1px solid black; */
-    box-shadow: 0px 0px 11px -5px rgba(0, 0, 0, 0.75);
+  /* border: 1px solid black; */
+  box-shadow: 0px 0px 11px -5px rgba(0, 0, 0, 0.75);
 }
 
 .nearbyshopcontainer div:nth-child(1) {
-    width: 75%;
-    margin: 0px;
-    padding: 20px;
-    border-radius: 10px;
+  width: 75%;
+  margin: 0px;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .nearbyshopcontainer div:nth-child(1) p {
-    margin: 0px;
-    padding: 0px;
-    font-size: 15px;
-
+  margin: 0px;
+  padding: 0px;
+  font-size: 15px;
 }
 
 .nearbyshopcontainer div:nth-child(1) p:nth-child(1) {
-    font-size: 25px;
-    margin: 10px 0px;
+  font-size: 25px;
+  margin: 10px 0px;
 }
 
 .nearbyshopcontainer div:nth-child(1) .nearbyshopHeading {
-    font-size: 20px;
-    margin-top: 20px;
+  font-size: 20px;
+  margin-top: 20px;
 }
 
 .nearbyshopcontainer div:nth-child(1) img {
-    width: 100%;
-    height: 300px;
-    margin: 10px 0px;
+  width: 100%;
+  height: 300px;
+  margin: 10px 0px;
 }
 
 .nearbyshopcontainer div:nth-child(2) {
-    width: 25%;
-    padding: 30px;
-    border-radius: 10px;
+  width: 25%;
+  padding: 30px;
+  border-radius: 10px;
 }
 
 .nearbyshopcontainer div:nth-child(2) img {
-    width: 100%;
-    margin-bottom: 20px;
-    border-radius: 5px;
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 5px;
 }
 
 .nearbyshopcontainer div:nth-child(2) p {
-    margin: 10px 0px;
-    padding: 0px;
-    font-size: 25px;
+  margin: 10px 0px;
+  padding: 0px;
+  font-size: 25px;
 }
 
 .nearbyshopcontainer div a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
 .nearbyshopcontainer div button {
-    color: white;
-    border: none;
-    padding: 5px 20px;
-    font-size: 16px;
-    font-weight: 700;
-    border-radius: 5px;
-    margin-left: 10%;
+  color: white;
+  border: none;
+  padding: 5px 20px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 5px;
+  margin-left: 10%;
 }
 
 .nearbyshopcontainer div button:nth-child(11) {
-    background-color: #f53838;
+  background-color: #f53838;
 }
 
 .nearbyshopcontainer div button:nth-child(12) {
-    background-color: #04be5a;
+  background-color: #04be5a;
 }
 
 .directorybannersection {
@@ -287,8 +286,8 @@
 }
 
 .logocontener img {
-    height: 200px;
-    border: 3px solid white;
+  height: 200px;
+  border: 3px solid white;
 }
 
 .logocontener .directoryname {
@@ -298,8 +297,8 @@
 }
 
 .logocontener div {
-    /* border: 1px solid blue; */
-    color: #58616a;
+  /* border: 1px solid blue; */
+  color: #58616a;
 }
 
 .discriptiondirectory {
@@ -314,13 +313,13 @@
 }
 
 .discriptiondirectory img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
-.discriptiondirectory>div {
-    /* border: 1px solid red; */
-    width: 50%;
+.discriptiondirectory > div {
+  /* border: 1px solid red; */
+  width: 50%;
 }
 
 .discriptiondirectorysecond {
@@ -330,28 +329,27 @@
     line-height: 40px;
 }
 
-
 .discriptiondirectorysecond a {
-    color: #2184ff;
-    text-decoration: none;
+  color: #2184ff;
+  text-decoration: none;
 }
 
 .discriptiondirectorysecond span {
-    color: #2184ff;
+  color: #2184ff;
 }
 
 .discriptiondirectorysecond div:nth-child(1) {
-    padding-left: 20%;
+  padding-left: 20%;
 }
 
 .discriptiondirectorysecond button {
-    background-color: #f53838;
-    color: white;
-    border: none;
-    padding: 5px 20px;
-    font-weight: 700;
-    font-size: 17px;
-    border-radius: 5px;
+  background-color: #f53838;
+  color: white;
+  border: none;
+  padding: 5px 20px;
+  font-weight: 700;
+  font-size: 17px;
+  border-radius: 5px;
 }
 
 .discriptiondirectorylong {
@@ -364,45 +362,44 @@
 }
 
 .discriptiondirectorylong p:nth-child(1) {
-    font-size: 20px;
-    font-weight: 700;
-
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .signlepagedirectoryimgs {
-    /* border: 1px solid blue; */
-    width: 85%;
-    margin: auto;
-    display: flex;
-    gap: 2%;
-    justify-content: space-between;
-    margin-top: 50px;
-    box-shadow: 0px -1px 19px -14px rgba(0, 0, 0, 0.75);
+  /* border: 1px solid blue; */
+  width: 85%;
+  margin: auto;
+  display: flex;
+  gap: 2%;
+  justify-content: space-between;
+  margin-top: 50px;
+  box-shadow: 0px -1px 19px -14px rgba(0, 0, 0, 0.75);
 }
 
 .signlepagedirectoryimgs img {
-    width: 18%;
-    border-radius: 5px;
+  width: 18%;
+  border-radius: 5px;
 }
 
 .bottombanner {
-    width: 85%;
-    margin: auto;
-    /* border: 1px solid red; */
-    margin-top: 50px;
+  width: 85%;
+  margin: auto;
+  /* border: 1px solid red; */
+  margin-top: 50px;
 }
 
 .bottombanner img {
-    width: 100%;
-    height: 250px;
+  width: 100%;
+  height: 250px;
 }
 
 .directorylastdiv {
-    /* border: 1px solid green; */
-    display: flex;
-    gap: 4%;
-    width: 85%;
-    margin: auto;
+  /* border: 1px solid green; */
+  display: flex;
+  gap: 4%;
+  width: 85%;
+  margin: auto;
 }
 
 
@@ -455,8 +452,26 @@
     padding: 15px;
 }
 
-.directorylastdiv>div:nth-child(2)>:nth-child(2) img {
-    width: 17%;
+@media all and (max-width: 419px) {
+  .logocontener .directoryname {
+    font-size: 15px;
+  }
+
+  .logocontener img {
+    height: 60px;
+  }
+
+  .bannerinformation {
+    gap: 5px;
+  }
+
+  .logocontener {
+    bottom: 48px;
+  }
+
+  .logocontener p {
+    font-size: 7px;
+  }
 }
 
 @media all and (max-width:900px) {

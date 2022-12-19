@@ -27,12 +27,14 @@ const RestaurantSingle = () => {
           <img
             style={{ height: "250px" }}
             src="https://www.kindmeal.my/photos/shop/5/583-c.jpg"
+            alt=""
           />
         </div>
         <div className="single">
           <img
             style={{ width: "60%", height: "350px" }}
             src={location.state.img}
+            alt=""
           />
           <h4 style={{ marginLeft: "350px" }}>{location.state.title}</h4>
         </div>

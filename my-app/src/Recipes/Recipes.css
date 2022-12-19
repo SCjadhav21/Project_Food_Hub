@@ -1,0 +1,674 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.speacer {
+  padding: 60px;
+  color: rgba(255, 255, 255, 0);
+}
+.recipecontainer {
+  /* border: solid green; */
+  background-color: #fcfcfc;
+  padding: 0% 8%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3%;
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 150px;
+}
+
+.recipecard {
+  /* border: 1px solid red; */
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 10px;
+}
+.recipecard a {
+  margin-left: 0px;
+}
+
+.recipecard > div:nth-child(1) {
+  /* border: 1px solid magenta; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px;
+  color: #666666;
+}
+
+.recipecard > div:nth-child(1) div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.recipecard > div:nth-child(1) img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.recipecard > div:nth-child(1) button {
+  font-size: 16px;
+  padding: 7px 20px;
+  font-weight: 700;
+  color: white;
+  background-color: #f53838;
+  border: none;
+  border-radius: 7px;
+}
+
+.recipecard > div:nth-child(2) {
+  /* border: 1px solid rgb(13, 0, 255); */
+  height: 240px;
+}
+
+.recipecard > div:nth-child(2) img {
+  width: 100%;
+  height: 100%;
+}
+
+.recipecard > div:nth-child(2) p {
+  position: relative;
+  color: white;
+  bottom: 37px;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 5px 0px;
+  background-color: rgba(0, 0, 0, 0.436);
+}
+
+.recipecard > div:nth-child(3) {
+  /* border: 1px solid rgb(0, 255, 42); */
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.recipecard > div:nth-child(3) p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 17px;
+  color: #444444;
+}
+
+.recipecard > div:nth-child(3) div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.searchoptions {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-between;
+  padding: 0% 8%;
+  background-color: #f0f0f0;
+  padding-bottom: 20px;
+}
+
+.searchoptions input {
+  width: 30%;
+  font-size: medium;
+  padding: 5px;
+  outline: none;
+  height: 35px;
+  font-weight: normal;
+  border-radius: 5px;
+  text-align: left;
+  border: 1px solid rgba(0, 0, 0, 0.322);
+}
+
+.searchoptions select {
+  border: 1px solid rgba(0, 0, 0, 0.322);
+  padding: 5px;
+  font-size: medium;
+  color: #676e7a;
+  outline: none;
+  width: 20%;
+  height: 35px;
+  font-weight: normal;
+}
+
+.searchoptions button {
+  font-size: medium;
+  padding: 5px 15px;
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+}
+
+.searchoptions button:nth-child(3) {
+  background-color: #f53838;
+}
+
+.searchoptions button:nth-child(4) {
+  background-color: #04be5a;
+}
+.searchoptions button a {
+  margin: 0px;
+}
+
+.activepage {
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.484);
+  padding: 0px 7px;
+  color: #676e7a;
+  cursor: pointer;
+  background-color: white;
+}
+
+.recipesAndDirectoryPagination {
+  /* border: 1px solid rgb(56, 203, 81); */
+  background-color: #fcfcfc;
+  display: flex;
+  padding: 10px 8%;
+  justify-content: space-between;
+  color: #676e7a;
+}
+
+.recipesAndDirectoryPagination button {
+  padding: 5px 15px;
+  color: #676e7a;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.recipesAndDirectoryPagination div {
+  display: flex;
+  gap: 10px;
+}
+
+.notactivepage {
+  color: blue;
+  cursor: pointer;
+}
+
+.searchbtnsRecipe {
+  /* border: 1px solid red; */
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  padding: 30px 8%;
+  gap: 10px;
+  background-color: #fcfcfc;
+}
+
+.searchbtnsRecipe p {
+  border: 1px solid rgba(0, 0, 0, 0.342);
+  padding: 7px 10px;
+  border-radius: 5px;
+  color: #676e7a;
+  background-color: white;
+}
+
+.searchbtnsRecipe p:hover {
+  background-color: #2bb673;
+  color: white;
+}
+
+.recipesintro {
+  padding: 30px 8%;
+  text-align: left;
+  line-height: 30px;
+  background-color: #f0f0f0;
+}
+
+.recipesintro p:nth-child(1) {
+  font-size: 23px;
+}
+
+.bannerSectionRecipe {
+  /* border: 1px solid red; */
+  margin-bottom: -200px;
+}
+
+.bannerSectionRecipe > img:nth-child(1) {
+  width: 100%;
+  height: 200px;
+}
+
+.bannerSectionRecipe > div {
+  display: flex;
+  /* border: 1px solid black; */
+  align-items: flex-end;
+  width: 93%;
+  position: relative;
+  bottom: 120px;
+  left: 7%;
+}
+
+.bannerSectionRecipe > div div:nth-child(1) {
+  /* border: 1px solid hotpink; */
+  display: flex;
+  gap: 20px;
+  padding-bottom: 7px;
+}
+
+.bannerSectionRecipe > div div:nth-child(1) p:nth-child(1) {
+  font-weight: 500;
+  font-size: x-large;
+}
+
+.bannerSectionRecipe > div div:nth-child(1) p:nth-child(2) {
+  font-weight: 500;
+  font-size: large;
+  color: rgb(100, 100, 100);
+}
+
+.bannerSectionRecipe button {
+  padding: 5px 20px;
+  border-radius: 5px;
+  float: left;
+}
+
+.bannerSectionRecipe button:nth-child(1) {
+  background-color: #f53838;
+  color: white;
+  font-weight: 500;
+  margin-right: 15px;
+}
+
+.bannerSectionRecipe button:nth-child(2) {
+  background-color: #e8e8e8;
+}
+
+.bannerSectionRecipe > div > div {
+  /* border: 1px solid green; */
+  width: 100%;
+  padding-left: 5%;
+  background-color: rgba(255, 255, 255, 0.815);
+}
+
+.bannerSectionRecipe div img {
+  width: 16%;
+  border: 3px solid white;
+}
+
+.recipeimgdiscontainer {
+  /* border: 1px solid rgb(0, 115, 255); */
+  width: 90%;
+  margin: auto;
+  margin-top: 150px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 12px -7px rgba(0, 0, 0, 0.75);
+}
+
+.recipeimgdis {
+  /* border: 1px solid red; */
+  display: flex;
+  height: 350px;
+}
+
+.recipeimgdis > div:nth-child(1) img {
+  width: 100%;
+  height: 100%;
+}
+
+.recipeimgdis > div {
+  width: 50%;
+}
+
+.recipeimgheading {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 30px;
+  font-weight: 500;
+  box-shadow: inset 0px -22px 51px -38px rgba(0, 0, 0, 1);
+}
+
+.grid4 {
+  /* border: 1px solid blanchedalmond; */
+  height: 85%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  font-size: 23px;
+  color: #333333d9;
+}
+
+.grid4 span {
+  color: #2bb673;
+  font-size: 25px;
+}
+
+.grid4 div {
+  border: 0.5px solid rgba(0, 0, 0, 0.116);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 30px;
+  font-weight: 500;
+}
+
+.grid4 div p {
+  display: flex;
+  align-items: center;
+}
+
+.grid4 ~ div {
+  /* border: 1px solid rgb(255, 251, 0); */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+  padding-top: 1.5%;
+}
+
+.grid4 ~ div p {
+  display: flex;
+  font-size: 30px;
+  gap: 10px;
+  align-items: center;
+}
+
+.grid4 ~ div span {
+  font-size: 15px;
+}
+
+.fullrecepi {
+  /* border: 1px solid green; */
+  text-align: left;
+  display: flex;
+}
+
+.fullrecepi h2 {
+  font-size: 25px;
+  font-weight: 500;
+  padding: 10px 0px;
+}
+
+.fullrecepi > div {
+  /* border: 1px solid hotpink; */
+  width: 50%;
+  padding: 20px;
+}
+
+.fullrecepi > div p {
+  padding-left: 20px;
+}
+
+.recipesreting {
+  color: rgba(128, 128, 128, 0.605);
+  font-size: 30px;
+}
+
+.recipesreting:hover {
+  color: gold;
+}
+
+.CandRecip {
+  /* border: 1px solid green; */
+  display: flex;
+  gap: 2%;
+  width: 90%;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.CandRecip button {
+  background-color: #f53838;
+  color: white;
+  padding: 0px 20px;
+  border-radius: 5px;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.CandRecip h2 {
+  font-size: 20px;
+  background-color: #e7e7e7;
+  padding-left: 20px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.CandRecip p {
+  display: flex;
+}
+
+.CandRecip div {
+  border: 1px solid rgba(0, 0, 0, 0.121);
+  /* box-shadow: 0px 0px 12px -7px rgba(0,0,0,0.75); */
+  line-height: 40px;
+  border-radius: 5px;
+}
+
+.CandRecip div:nth-child(1) {
+  width: 30%;
+}
+
+.CandRecip div:nth-child(1) p {
+  justify-content: center;
+}
+.CandRecip div:nth-child(2) {
+  width: 70%;
+  text-align: left;
+}
+.CandRecip div:nth-child(2) p {
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.CandRecip div:nth-child(2) input {
+  border: 1px solid rgba(0, 0, 0, 0.411);
+  margin-left: 10%;
+  padding-left: 10px;
+  width: 80%;
+  border-radius: 5px;
+}
+
+.CandRecip div:nth-child(2) button {
+  margin-left: 10%;
+}
+
+.morerecipescontainer {
+  width: 90%;
+  margin: auto;
+  box-shadow: 0px 0px 12px -7px rgba(0, 0, 0, 0.75);
+  margin-top: 30px;
+  padding: 0px 20px;
+  padding-bottom: 20px;
+}
+
+.morerecipescontainer h1 {
+  font-size: 23px;
+  text-align: left;
+  padding: 10px 0px;
+}
+
+.morepicsrecepies {
+  /* border: 1px solid red; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  height: 200px;
+  gap: 2%;
+}
+
+.morepicsrecepies img {
+  width: 100%;
+  height: 200px;
+  border-radius: 5px;
+}
+
+.bannerII {
+  margin: 50px auto;
+  height: 250px;
+  width: 90%;
+  box-shadow: 0px 0px 12px -7px rgba(0, 0, 0, 0.75);
+}
+@media screen and (max-width: 920px) {
+  .searchbtnsRecipe p {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .searchoptions button:nth-child(3) {
+    font-size: 14px;
+  }
+  .searchoptions button a {
+    font-size: 14px;
+  }
+  .searchbtnsRecipe p {
+    font-size: 10px;
+  }
+  .bannerSectionRecipe > div {
+    bottom: 70px;
+  }
+  .CandRecip {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .CandRecip div:nth-child(1) {
+    width: 70%;
+    margin: auto;
+  }
+
+  .CandRecip div:nth-child(2) {
+    width: 100%;
+  }
+
+  .CandRecip div:nth-child(2) p {
+    font-size: 10px;
+  }
+  .recipecontainer {
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 170px;
+  }
+}
+@media screen and (max-width: 770px) {
+  .speacer {
+    padding-top: 10px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .searchbtnsRecipe p {
+    font-size: 8px;
+    padding: 3px 4px;
+  }
+  .searchoptions button:nth-child(3) {
+    font-size: 11px;
+    padding: 10px;
+  }
+  .searchoptions button:nth-child(4) {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
+  .searchoptions button a {
+    font-size: 12px;
+    padding: 0px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .searchoptions input {
+    font-size: 9px;
+  }
+  .searchoptions select {
+    font-size: 9px;
+  }
+  .searchoptions button:nth-child(3) {
+    font-size: 9px;
+    padding: 5px;
+  }
+  .searchoptions button:nth-child(4) {
+    padding: 5px;
+  }
+  .searchoptions button a {
+    font-size: 9px;
+  }
+  .recipecontainer {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 40px;
+    margin-bottom: -120px;
+  }
+  .searchbtnsRecipe {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .morepicsrecepies {
+    grid-template-columns: repeat(1, 1fr);
+    margin-bottom: 400px;
+  }
+  .bannerSectionRecipe {
+    margin-bottom: -40px;
+  }
+  .bannerII {
+    height: 200px;
+  }
+
+  .fullrecepi {
+    margin-top: 200px;
+    flex-direction: column;
+  }
+
+  .fullrecepi > div {
+    width: 100%;
+  }
+
+  .recipeimgdiscontainer {
+    margin-top: 30px;
+  }
+
+  .recipeimgheading {
+    font-size: 20px;
+  }
+
+  .bannerSectionRecipe button {
+    font-size: 10px;
+    padding: 5px;
+  }
+
+  .bannerSectionRecipe > div div:nth-child(1) p:nth-child(1) {
+    font-size: medium;
+  }
+
+  .bannerSectionRecipe > div div:nth-child(1) p:nth-child(2) {
+    font-size: small;
+  }
+
+  .bannerSectionRecipe button:nth-child(1) {
+    margin-right: 5px;
+  }
+
+  .bannerSectionRecipe div img {
+    width: 24%;
+  }
+
+  .recipeimgdis {
+    flex-direction: column;
+  }
+
+  .recipeimgdis > div {
+    width: 100%;
+  }
+
+  .recipeimgdis > div:nth-child(1) img {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .searchoptions button:nth-child(3) {
+    font-size: 7px;
+    padding: 5px;
+  }
+  .searchoptions button:nth-child(4) {
+    padding: 5px;
+  }
+  .searchoptions button a {
+    font-size: 7px;
+  }
+}
+@media screen and (max-width: 430px) {
+  .speacer {
+    padding-top: 0px;
+  }
+}
