@@ -3,7 +3,8 @@ import {
   GridItem,
   Button,
   Text,
-  Heading,
+  Heading
+  ,
   Image,
   Box,
 } from "@chakra-ui/react";
