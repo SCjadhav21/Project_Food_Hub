@@ -6,10 +6,12 @@ import { Box } from "@chakra-ui/react";
 
 const Meal = () => {
   return (
-    <Box p="0px 8%" pt={["60px", " ", "160px"]}>
+    <Box pt={["60px", " ", "160px"]}>
       <div className="meal">
         <div className="type">
-          <h2>"pizza" In Meat-Free Deals | Restaurants In Ampang </h2>
+          <h2 style={{ fontSize: "30px" }}>
+            "pizza" In Meat-Free Deals | Restaurants In Ampang{" "}
+          </h2>
           <p>
             Browse delicious meat-free, vegetarian deals from top restaurants
             and cafes! Just click on "Get Free Coupon" to obtain instant

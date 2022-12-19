@@ -21,16 +21,14 @@ let IntialData = {
 
   phone: "",
 
-  email: "",
+  foodtype: "",
 
-  opningHourse: "",
-  webOrfp: "",
-  about: "",
+  opening: "",
+  mapimg: "",
+  aboutsort: "",
 };
 const AddShop = () => {
   let [shopData, setShopData] = useState(IntialData);
-
-  let url = "https://mock-server-app-pzg9.onrender.com/kindmealRecipes";
 
   const handleChange = (e) => {
     let { value, name } = e.target;
@@ -39,14 +37,14 @@ const AddShop = () => {
   };
 
   const handleSubmit = () => {
-    if (shopData.name && shopData.address) {
-      //   axios
-      //     .post("https://mock-server-app-pzg9.onrender.com/kindmealRecipes", {
-      //       ...shopData,
-      //     })
-      //     .catch(function (error) {
-      //       console.log(error);
-      //     });
+    if (shopData.name && shopData.address && shopData.mapimg) {
+      axios
+        .post("https://mock-server-app-pzg9.onrender.com/kindmealDirectory", {
+          ...shopData,
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     } else {
       alert("Please fill all required fields");
     }
@@ -149,41 +147,43 @@ const AddShop = () => {
                 />
               </FormControl>
               <FormControl justifyContent="space-between" display="flex">
-                <FormLabel w="30%">Shop Email (Optional)</FormLabel>
+                <FormLabel w="30%">Shop foodtype (Optional)</FormLabel>
                 <Input
-                  name="email"
+                  name="foodtype"
                   onChange={handleChange}
-                  type="email"
+                  type="text"
                   width="70%"
-                  value={shopData.email}
-                  placeholder="Enter Email "
+                  value={shopData.foodtype}
+                  placeholder="Enter foodtype "
                 />
               </FormControl>
               <FormControl display="flex" justifyContent="space-between">
                 <FormLabel w="30%">Opening Hours (Optional) </FormLabel>
 
                 <Input
-                  name="opningHourse"
+                  name="opening"
                   onChange={handleChange}
                   type="email"
                   width="70%"
-                  value={shopData.opningHourse}
+                  value={shopData.opening}
                   placeholder="Example: Mon - Fri: 10am - 9pm; Sat - Sun: 10am - 10pm"
                 />
               </FormControl>
 
-              <FormControl justifyContent="space-between" display="flex">
-                <FormLabel w="30%">
-                  Website / Facebook Page (Optional)
-                </FormLabel>
+              <FormControl
+                isRequired
+                justifyContent="space-between"
+                display="flex"
+              >
+                <FormLabel w="30%">Shop Image</FormLabel>
 
                 <Input
-                  name="webOrfp"
+                  name="mapimg"
                   onChange={handleChange}
                   type="url"
                   width="70%"
-                  value={shopData.webOrfp}
-                  placeholder="Website url / Facebook Page id"
+                  value={shopData.mapimg}
+                  placeholder="image url"
                 />
               </FormControl>
               <FormControl justifyContent="space-between" display="flex">
@@ -192,11 +192,11 @@ const AddShop = () => {
                 <Box w="70%">
                   <Textarea
                     type="url"
-                    name="about"
+                    name="aboutsort"
                     onChange={handleChange}
                     height=" 150px"
                     borderRadius="10px"
-                    value={shopData.about}
+                    value={shopData.aboutsort}
                     placeholder="Brief description of what the shop offers Submit Listing"
                   />
                   {/* <Input  /> */}

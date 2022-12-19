@@ -4,7 +4,7 @@ import { useState } from "react";
 import "./Directory.css";
 import axios from "axios";
 import RecipesAndDirectoryPagination from "../../Components/RecipesAndDirectoryPagination";
-import { Box } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 export default function Directory() {
   const [page, setPage] = useState(1);
@@ -15,7 +15,7 @@ export default function Directory() {
   useEffect(() => {
     axios
       .get(
-        `https://prakash-vercel-database.vercel.app/kindmealDirectory?_page=${page}&_limit=10&q=${que}`
+        `https://mock-server-app-pzg9.onrender.com/kindmealDirectory?_page=${page}&_limit=10&q=${que}`
       )
       .then((res) => setArr(res.data));
   }, [page, que]);
@@ -26,7 +26,8 @@ export default function Directory() {
   };
 
   return (
-    <Box p="0px 8%" pt={["60px", " ", "160px"]}>
+    <>
+      <div className="speacer">Speacer</div>
       <div className="directoryintro">
         <h1>Vegetarian Restaurants In Malaysia</h1>
         <p>
@@ -89,12 +90,12 @@ export default function Directory() {
                 alt=""
               />
               <div>
-                <p>Visit Website </p>
+                <Link to={`/directory/${ele.id}`}>Visit Website </Link>
                 <a href={ele.directions} target="_blank">
                   {" "}
                   Get Directions
                 </a>
-                <p>Nearby Shops</p>
+                <Link to={`/directory/${ele.id}`}>Nearby Shops</Link>
               </div>
             </div>
           ))}
@@ -104,6 +105,6 @@ export default function Directory() {
         current={page}
         onchange={(value) => setPage(value)}
       />
-    </Box>
+    </>
   );
 }

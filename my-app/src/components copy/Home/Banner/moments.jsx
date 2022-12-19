@@ -18,9 +18,9 @@ const Moments = () => {
   }, []);
   return (
     <>
-      <Box p="0px 8%" pt={["60px", " ", "160px"]} className="moment">
+      <Box className="moment">
         <div className="live">
-          <h1>Yummyliciou Moments</h1>
+          <h1 style={{ fontSize: "30px" }}>Yummyliciou Moments</h1>
           <h2 id="hot">
             <a href="">Secret Recipes</a>
             <a href="">Member Hot Picks</a>

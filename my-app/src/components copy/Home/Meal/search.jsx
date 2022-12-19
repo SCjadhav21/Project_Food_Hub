@@ -57,7 +57,7 @@ const Search = () => {
       </div>
       <div>
         <button className="browse">
-          <Link to="/directory">Brouse Restaurant</Link>
+          <Link to="/directory">Browser Restaurant</Link>
         </button>
       </div>
     </div>

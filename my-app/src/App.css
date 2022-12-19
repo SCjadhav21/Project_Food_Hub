@@ -1,16 +1,8 @@
-
-
-*{
+* {
   margin: 0;
   padding: 0;
+}
 
-}
-.app{
-  width: 90%;
-  margin: auto;
-  padding: 0% 8%;
-}
-img:hover{
+img:hover {
   cursor: pointer;
-
 }
