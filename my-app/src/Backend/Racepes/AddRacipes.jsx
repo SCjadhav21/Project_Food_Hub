@@ -2,7 +2,6 @@ import React from "react";
 import axios from "axios";
 import {
   Box,
-  Heading,
   Link,
   Text,
   Input,
@@ -12,7 +11,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import { useEffect } from "react";
+
 // import { Link } from "react-router-dom";
 let IntialData = {
   id: Date.now(),
@@ -31,11 +30,7 @@ let IntialData = {
   bannerII: "https://www.kindmeal.my/images/banner_recipe.jpg",
 };
 const AddRacipes = () => {
-  let [input, setInput] = useState("");
-
   let [racipeData, setRacipeData] = useState(IntialData);
-
-  let url = "https://mock-server-app-pzg9.onrender.com/kindmealRecipes";
 
   const handleChange = (e) => {
     let { value, name } = e.target;

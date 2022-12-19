@@ -47,15 +47,15 @@ const Meals = () => {
                   <img src={items.url} alt="images" />
                 </NavLink>
               </div>
-              <h3 style={{ marginLeft: "40px" }}>{items.title}</h3>
+              <h3 style={{ marginLeft: "20px", fontSize: "25px" }}>
+                {items.title}
+              </h3>
 
-              <p>{items.title2}</p>
+              <p style={{ marginLeft: "20px" }}>{items.title2}</p>
 
-              <h5 style={{ marginLeft: "40px" }}>{items.description}</h5>
+              <h5 style={{ marginLeft: "20px" }}>{items.description}</h5>
               <div className="img2">
-                <button style={{ backgroundColor: "red" }}>
-                  GET FREE COUPON
-                </button>
+                <button style={{ backgroundColor: "red" }}>GET FREE</button>
                 <img
                   style={{ width: "80%", height: "80px" }}
                   src={items.rating}

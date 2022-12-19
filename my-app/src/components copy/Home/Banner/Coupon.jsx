@@ -19,17 +19,19 @@ const Coupon = () => {
     <>
       <div className="finder">
         <div className="finders">
-          <h2>
+          <h2 style={{ fontSize: "30px" }}>
             Introducing Malaysia's Pioneering Meat-Free Lifestyle Platform
           </h2>
-          <h4>
-            Brought to you by
-            <img
-              style={{ height: "50px" }}
-              src="https://www.petfinder.my/images/logo-575x100.png"
-            />
-          </h4>
-          <h3>
+          <div className="brought">
+            <h4 style={{ marginTop: "20px" }}>
+              Brought to you by
+              <img
+                style={{ height: "50px", marginLeft: "120px" }}
+                src="https://www.petfinder.my/images/logo-575x100.png"
+              />
+            </h4>
+          </div>
+          <h3 style={{ fontSize: "20px" }}>
             Instant coupon & dining. No upfront coupon payment, booking or
             printing.
           </h3>
@@ -56,15 +58,14 @@ const Coupon = () => {
           </h3>
         </div>
         <div className="button">
-          <button style={{ marginLeft: "200px", marginBottom: "30px" }}>
+          <button style={{ marginBottom: "30px" }}>
             <h1>Join KindMeal Now </h1>
-            {/* <h5>Your Tasty Journery Begins Here</h5> */}
           </button>
         </div>
       </div>
       <div className="save">
         <img
-          style={{ width: "80%" }}
+          style={{ width: "100%" }}
           src="https://www.kindmeal.my/images/banner_whykindmeal.png"
         />
       </div>
