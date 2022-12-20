@@ -22,10 +22,10 @@ const RestaurantSingle = () => {
 
   return (
     <Box p="0px 8%" pt={["90px", " ", "160px"]}>
-      <Box style={{ backgroundColor: "red" }}>
+      <Box p="10px" style={{ backgroundColor: "red" }}>
         <Link to="/">Go Back</Link>
       </Box>
-      <Box p="0px 8%" pt={["60px", " ", "160px"]} className="main">
+      <Box pt="20px" className="main">
         <div>
           <img
             style={{ height: "250px" }}
