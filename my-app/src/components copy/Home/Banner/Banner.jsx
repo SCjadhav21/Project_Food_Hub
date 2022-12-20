@@ -2,32 +2,41 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
+import { Box } from "@chakra-ui/react";
 
 const Banner = () => {
-  const [data, setData] = useState([]);
+  const [data0, setData0] = useState("");
+  let data = [
+    "https://www.kindmeal.my/photos/shop/5/546-c.jpg",
+    "https://www.kindmeal.my/photos/item/0/486-5993-l.jpg",
+    "https://www.kindmeal.my/photos/deal/7/719-5142-m.jpg",
+    "https://www.kindmeal.my/photos/deal/7/725-5225-m.jpg",
+    "https://www.kindmeal.my/photos/deal/7/711-4936-m.jpg",
+    "https://www.kindmeal.my/photos/deal/2/271-519-m.jpg",
+    "https://www.kindmeal.my/photos/deal/3/369-3697-m.jpg",
+    "https://www.kindmeal.my/photos/deal/7/707-4819-m.jpg",
+  ];
   useEffect(() => {
-    const getData = async () => {
-      let res = await axios.get("https://server1-b406.onrender.com/banner");
-      console.log(res);
-      setData(res.data);
-    };
-    getData();
+    let a = -1;
+    setInterval(() => {
+      if (a === 7) {
+        a = 0;
+      } else {
+        a = a + 1;
+      }
+
+      setData0(data[a]);
+    }, 3000);
   }, []);
   return (
     <>
-      {data.map((item) => {
-        return (
-          <>
-            <div className="banner">
-              <img
-                style={{ width: "100%", height: "450px" }}
-                src={item.url}
-                alt="banner"
-              />
-            </div>
-          </>
-        );
-      })}
+      <Box className="banner">
+        <img
+          style={{ width: "100%", height: "450px" }}
+          src={data0}
+          alt="banner"
+        />
+      </Box>
     </>
   );
 };

@@ -32,7 +32,7 @@ const Restaurant = () => {
                 <div className="imgg">
                   <NavLink
                     state={{ img: items.url, title: items.title }}
-                    to="/rest"
+                    to="/Moments"
                   >
                     <img src={items.url} alt="" />
                   </NavLink>
