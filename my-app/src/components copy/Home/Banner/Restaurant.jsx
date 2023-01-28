@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
-import "./Restaurant.css";
+import "../../../style/Restaurant.css";
 import { NavLink } from "react-router-dom";
 import { Box, SimpleGrid, Text } from "@chakra-ui/react";
 const Restaurant = () => {

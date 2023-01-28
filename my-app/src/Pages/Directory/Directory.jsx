@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import "./Directory.css";
+import "../../style/Directory.css";
 import axios from "axios";
 import RecipesAndDirectoryPagination from "../../Components/RecipesAndDirectoryPagination";
 import { Link } from "react-router-dom";

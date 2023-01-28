@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
-import "./Recipes.css";
+import "../../style/Recipes.css";
 import { AiOutlineClockCircle, AiTwotoneMessage } from "react-icons/ai";
 import { BsFillHeartFill } from "react-icons/bs";
 import RecipesAndDirectoryPagination from "../../Components/RecipesAndDirectoryPagination";

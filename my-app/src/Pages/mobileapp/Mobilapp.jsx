@@ -1,6 +1,6 @@
 import { Box } from "@chakra-ui/react";
 import React from "react";
-import "./Mobilapp.css";
+import "../../style/Mobilapp.css";
 
 export default function Mobilapp() {
   return (
