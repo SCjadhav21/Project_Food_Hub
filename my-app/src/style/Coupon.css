@@ -30,13 +30,14 @@
 }
 .coupons {
   width: 100%;
-  height: 200px;
+  cursor: pointer;
+  padding: 10px;
+  /* height: 200px; */
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .anju img {
   width: 40%;
-  margin-top: 30px;
-  margin-left: 70px;
+  align-self: center;
 }
 .brought {
   margin-left: 10%;
@@ -122,13 +123,13 @@
     font-size: 10px;
   }
 }
-.coupon {
+/* .coupon {
   height: 250px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   margin-top: 40px;
-}
+} */
 .coupons {
   width: 100%;
   height: 200px;
@@ -174,7 +175,7 @@ p {
   margin-bottom: 30px;
 }
 
-@media screen and (max-width: 640px) {
+/* @media screen and (max-width: 640px) {
   .coupon {
     height: auto;
     display: grid;
@@ -187,4 +188,4 @@ p {
     height: auto;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
-}
+} */

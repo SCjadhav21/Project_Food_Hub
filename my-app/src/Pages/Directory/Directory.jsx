@@ -4,7 +4,8 @@ import { useState } from "react";
 import "../../style/Directory.css";
 import axios from "axios";
 import RecipesAndDirectoryPagination from "../../Components/RecipesAndDirectoryPagination";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
+import { Button } from "@chakra-ui/react";
 
 export default function Directory() {
   const [page, setPage] = useState(1);
@@ -27,7 +28,7 @@ export default function Directory() {
 
   return (
     <>
-      <div className="speacer" >Speacer</div>
+      <div className="speacer">Speacer</div>
       <div className="directoryintro">
         <h1>Vegetarian Restaurants In Malaysia</h1>
         <p>
@@ -60,7 +61,21 @@ export default function Directory() {
           <option value="Terengganu">Terengganu</option>
         </select>
         <button onClick={searchDirectory}>Search Shops</button>
-        <button>Add a Shop</button>
+
+        <Link to="/addShop">
+          {" "}
+          <Button
+            style={{
+              color: "white",
+              padding: "0px 20px",
+              borderRadius: "5px",
+              fontWeight: 500,
+              backgroundColor: "#04be5a",
+            }}
+          >
+            Add a Shop{" "}
+          </Button>
+        </Link>
       </div>
       <div className="extrasearch">
         <p>Vegetarian Directory</p>

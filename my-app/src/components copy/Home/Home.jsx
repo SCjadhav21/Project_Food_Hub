@@ -12,8 +12,8 @@ import { Box } from "@chakra-ui/react";
 const Home = () => {
   return (
     <>
-      <Banner />
-      <Box p="0px 8%" className="home">
+      <Box p="0px 8%" pt={["90px", " ", "160px"]} className="home">
+        <Banner />
         <Banners />
         <News />
         <Moments />

@@ -4,6 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 import "../../../style/Restaurant.css";
 import { NavLink } from "react-router-dom";
+import { Box, SimpleGrid, Text } from "@chakra-ui/react";
 const Restaurant = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -15,35 +16,43 @@ const Restaurant = () => {
     getData();
   }, []);
   return (
-    <>
-      <div className="nam">
-        <div className="livess">
-          <h1 style={{ fontSize: "30px" }}>Discover Restaurants</h1>
+    <Box p="20px" className="nam">
+      <div className="livess">
+        <h1 style={{ fontSize: "30px", fontWeight: "bold" }}>
+          Discover Restaurants
+        </h1>
 
-          <h2 id="dir">
-            <a href="">Vegetarian Directory</a>
-            <a href="">Restaurant Menu</a>
-          </h2>
-        </div>
-        <div className="cold">
-          {data.map((items, title) => {
-            return (
-              <div>
-                <div className="imgg">
-                  <NavLink
-                    state={{ img: items.url, title: items.title }}
-                    to="/rest"
-                  >
-                    <img src={items.url} alt="" />
-                  </NavLink>
-                </div>
-                <p>{items.title}</p>
-              </div>
-            );
-          })}
-        </div>
+        <h2 id="dir">
+          <a href="/directory">Vegetarian Directory</a>
+          <a href="/recipes">Restaurant Menu</a>
+        </h2>
       </div>
-    </>
+      <SimpleGrid columns={[1, 3, 4, 5]} gap={7}>
+        {data.map((items, index) => {
+          return (
+            <Box
+              h="full"
+              borderRadius="20px"
+              alignItems="center"
+              boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
+              key={index}
+            >
+              <div className="imgg">
+                <NavLink
+                  state={{ img: items.url, title: items.title }}
+                  to="/Moments"
+                >
+                  <img src={items.url} alt="" />
+                </NavLink>
+              </div>
+              <Text p="5px" align="center">
+                {items.title}
+              </Text>
+            </Box>
+          );
+        })}
+      </SimpleGrid>
+    </Box>
   );
 };
 
