@@ -20,7 +20,7 @@ import { Link, NavLink } from "react-router-dom";
 import Login from "./Login";
 import Image from "../foodHub2.png";
 import SignUp from "./Signup";
-
+import '../style/Navbar.css'
 const Navbar = () => {
   const [text, setText] = useState("");
   const [user, setUser] = useState("");

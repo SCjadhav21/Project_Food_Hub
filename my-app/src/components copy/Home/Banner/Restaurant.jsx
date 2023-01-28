@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
-import "./Restaurant.css";
+import "../../../style/Restaurant.css";
 import { NavLink } from "react-router-dom";
 const Restaurant = () => {
   const [data, setData] = useState([]);

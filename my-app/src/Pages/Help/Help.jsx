@@ -1,6 +1,6 @@
 import { Box } from "@chakra-ui/react";
 import React from "react";
-import "./Help.css";
+import "../../style/Help.css";
 
 export default function Help() {
   return (

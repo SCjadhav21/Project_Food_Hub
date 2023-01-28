@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import "./Kind.css";
+import "../../style/Kind.css";
 import {
   AiFillTwitterCircle,
   AiFillLike,

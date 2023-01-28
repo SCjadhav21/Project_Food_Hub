@@ -1,5 +1,5 @@
 import React from "react";
-import "./Directory.css";
+import "../../style/Directory.css";
 import axios from "axios";
 import { Box } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";

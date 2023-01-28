@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
-import "./moments.css";
+import "../../../style//moments.css";
 import { NavLink } from "react-router-dom";
 import { Box } from "@chakra-ui/react";
 

@@ -14,10 +14,13 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import React from "react";
+import Image from "../foodHub2.png";
+import { AuthContext } from "../Context/AuthContext";
 
 const Login = ({ text, user, setText, setUser }) => {
   console.log(text, user, setText, setUser);
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { auth, handleLogin } = React.useContext(AuthContext);
 
   const handleUser = () => {
     setUser(text);
@@ -25,16 +28,17 @@ const Login = ({ text, user, setText, setUser }) => {
 
   return (
     <>
-      <Button onClick={onOpen}>Login</Button>
+      {auth.isAuth ? (
+        <Button onClick={onOpen}>Login</Button>
+      ) : (
+        <Button onClick={onOpen}>Logout</Button>
+      )}
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>
-            <Img
-              src="https://www.kindmeal.my/images/logo-kindmeal.png"
-              alt="Logo"
-            />
+            <Img src={Image} alt="Logo" />
             <Text ml="120px">Member Login</Text>
           </ModalHeader>
           <ModalCloseButton />
@@ -67,7 +71,6 @@ const Login = ({ text, user, setText, setUser }) => {
             <Button colorScheme="blue" mr={3} onClick={onClose}>
               Close
             </Button>
-            <Button variant="ghost">Secondary Action</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
