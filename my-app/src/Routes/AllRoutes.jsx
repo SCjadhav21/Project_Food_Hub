@@ -1,6 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-import AddShop from "../Backend/Directory/AddShop";
-import AddKindMoment from "../Backend/KindMoments/AddKindMoment";
 import AddRacipes from "../Backend/Racepes/AddRacipes";
 import RestaurantSingle from "../components copy/Home/Banner/RestaurantSingle/RestaurantSingle";
 import Home from "../components copy/Home/Home";
@@ -19,7 +17,7 @@ import SingleKindPage from "../Pages/kind/SingleKind";
 import Mobilapp from "../Pages/mobileapp/Mobilapp";
 import Recipes from "../Pages/Recipes/Recipes";
 import SignleRecipePage from "../Pages/Recipes/SignleRecipePage";
-
+import AddShop from "../Backend/Directory/AddShop";
 function AllRoutes() {
   return (
     <Routes>
@@ -52,7 +50,7 @@ function AllRoutes() {
       {/* suraj */}
       <Route path="/AddRacipes" element={<AddRacipes />}></Route>
 
-      <Route path="/AddShop" element={<AddShop />}></Route>
+      <Route path="/addShop" element={<AddShop />}></Route>
     </Routes>
   );
 }

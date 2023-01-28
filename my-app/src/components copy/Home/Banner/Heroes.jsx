@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import "./News.css";
+import { Box, Img, SimpleGrid, Text } from "@chakra-ui/react";
 const Heroes = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -15,27 +16,41 @@ const Heroes = () => {
   }, []);
   return (
     <>
-      <div className="new">
+      <Box p="20px" className="new">
         <div className="lives">
-          <h1 style={{ fontSize: "30px" }}>Amazing Superheroes</h1>
+          <h1 style={{ fontSize: "30px", fontWeight: "bold" }}>
+            Amazing Superheroes
+          </h1>
           <h2 id="on">
             <a href="">Latest Buzz</a>
             <a href="">Lifestyles Ambassadors</a>
           </h2>
         </div>
-        <div className="news">
-          {data.map((items, title) => {
+        <SimpleGrid columns={[1, 3, 4, 5]} gap={7}>
+          {data.map((items, index) => {
             return (
-              <div>
+              <Box
+                h="full"
+                borderRadius="20px"
+                alignItems="center"
+                boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
+                key={index}
+              >
                 <div className="img">
-                  <img src={items.url} alt="" />
+                  <Img
+                    borderRadius="20px 20px 0px 0px"
+                    src={items.url}
+                    alt=""
+                  />
                 </div>
-                <p>{items.title}</p>
-              </div>
+                <Text p="5px" align={"center"}>
+                  {items.title}
+                </Text>
+              </Box>
             );
           })}
-        </div>
-      </div>
+        </SimpleGrid>
+      </Box>
     </>
   );
 };

@@ -93,10 +93,10 @@ const Directory1 = (props) => {
           </Text>
           <Text fontSize="l">Get started sharing your tasty moments now.</Text>
 
-            {/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */}
-            <Stack direction={['column', 'row']} spacing='34px' width={"500"}>
-                <Box  h='20px' >
-                <form onSubmit={handlesubmit}>
+          {/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */}
+          <Stack direction={["column", "row"]} spacing="34px" width={"500"}>
+            <Box h="20px">
+              <form onSubmit={handlesubmit}>
                 <Input
                   placeholder="Search Shop Name"
                   size="md"
@@ -110,49 +110,47 @@ const Directory1 = (props) => {
                   type="text"
                 />
               </form>
-                </Box>
-                
-                <Box  height="20px" fontSize="15px" margin="auto" padding={"5px"}>
-                  <select
-                    name="country"
-                    value={country}
-                    
-                    onClick={handlesubmit1}
-                    onChange={(e) => setCountry(e.target.value)}
-                  >
-                    <option padding="15px">All Shops in Malashiya</option>
-                    <option value="Berjaye Cafe">Berjaye Cafe</option>
-                    <option value="Berjaye Cafe">Berjaye Cafe</option>
-                    <option value="Ba-Xian Cafe">Ba-Xian Cafe</option>
-                    <option value="Arti Wodless Cafe">Arti Wodless Cafe</option>
-                  </select>
-                </Box>
-                
-                <Box  h='40px' marginLeft={"10px"} >
-                    <Button
-                    bg="red"
-                    borderRadius="5px"
-                    color="White"
-                    fontSize="22px"
-                    size={["sm","sm","md"]}
-                    width={["100px","120px","120px"]}
-                  >
-                    Search Shop
-                  </Button>
-                </Box>
-               
-              
+            </Box>
+
+            <Box height="20px" fontSize="15px" margin="auto" padding={"5px"}>
+              <select
+                name="country"
+                value={country}
+                onClick={handlesubmit1}
+                onChange={(e) => setCountry(e.target.value)}
+              >
+                <option padding="15px">All Shops in Malashiya</option>
+                <option value="Berjaye Cafe">Berjaye Cafe</option>
+                <option value="Berjaye Cafe">Berjaye Cafe</option>
+                <option value="Ba-Xian Cafe">Ba-Xian Cafe</option>
+                <option value="Arti Wodless Cafe">Arti Wodless Cafe</option>
+              </select>
+            </Box>
+
+            <Box h="40px" marginLeft={"10px"}>
+              <Button
+                bg="red"
+                borderRadius="5px"
+                color="White"
+                fontSize="22px"
+                size={["sm", "sm", "md"]}
+                width={["100px", "120px", "120px"]}
+              >
+                Search Shop
+              </Button>
+            </Box>
+
             <Box width="15%">
               <Button
                 bg="green"
                 borderRadius="5px"
                 color="White"
                 fontSize="22px"
-                size={["sm","sm","md"]}
-                width={["100px","120px","120px"]}
+                size={["sm", "sm", "md"]}
+                // width={["100px", "120px", "120px"]}
                 onClick={onOpen}
               >
-                Add a Shop
+                Share Your KindMoment
               </Button>
               <Modal
                 closeOnOverlayClick={false}
