@@ -21,7 +21,7 @@ KindMeal.my is Malaysia's leading meat-free lifestyle platform, indulging you wi
 
 Deployed with netlify app 
 ```
-https://kind-meal.netlify.app/
+iridescent-biscochitos-61ac19.netlify.app/
  ```
 
 ### <u>Run Locally</u>
@@ -58,7 +58,7 @@ go to http://localhost:3000
 
  
  Click the link to view project: 
- <a href="https://kind-meal.netlify.app/">Kind-Meal</a>
+ <a href="iridescent-biscochitos-61ac19.netlify.app/">Kind-Meal</a>
   
 ## Lessons Learned
 
