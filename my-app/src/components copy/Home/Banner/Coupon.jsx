@@ -4,7 +4,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import "../../../style//Coupon.css";
+import "../../../style/Coupon.css";
 const Coupon = () => {
   const data = [
     {

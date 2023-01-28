@@ -2,11 +2,8 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
-
 import "../../../style/News.css";
-
 import { Box, Img, SimpleGrid, Text } from "@chakra-ui/react";
-
 const Heroes = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
