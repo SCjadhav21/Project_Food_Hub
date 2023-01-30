@@ -24,6 +24,7 @@ const Signup1 = () => {
     email: "",
     mobile: "",
     password: "",
+    address:""
   });
   const [show, setShow] = React.useState(false);
   const handleSubmit = async (e) => {
@@ -110,7 +111,7 @@ const Signup1 = () => {
                   <Input
                     pr="4.5rem"
                     type="text"
-                    placeholder="Enter  Your Name Here"
+                    placeholder="Enter Your Name"
                     name="name"
                     variant="flushed"
                     focusBorderColor="#f16521"
@@ -126,7 +127,7 @@ const Signup1 = () => {
                   <Input
                     pr="4.5rem"
                     type="text"
-                    placeholder="Enter  Your Mobile No Here"
+                    placeholder="Enter Your Mobile "
                     name="mobile"
                     variant="flushed"
                     focusBorderColor="#f16521"
@@ -142,7 +143,7 @@ const Signup1 = () => {
                   <Input
                     pr="4.5rem"
                     type="email"
-                    placeholder="Enter  Your Email Here"
+                    placeholder="Enter Your Email"
                     variant="flushed"
                     focusBorderColor="#f16521"
                     name="email"
@@ -158,7 +159,7 @@ const Signup1 = () => {
                   <Input
                     pr="4.5rem"
                     type={show ? "text" : "password"}
-                    placeholder="Enter  Your password Here"
+                    placeholder="Enter Your password "
                     variant="flushed"
                     focusBorderColor="#f16521"
                     name="password"
@@ -167,6 +168,7 @@ const Signup1 = () => {
                       setFormState({ ...formState, password: e.target.value })
                     }
                   />
+
                   <InputRightElement width="4.5rem">
                     <Button
                       h="1.75rem"
@@ -176,7 +178,24 @@ const Signup1 = () => {
                     >
                       {show ? "Hide" : "Show"}
                     </Button>
+                    
                   </InputRightElement>
+                </InputGroup>
+              </FormControl>
+              <FormControl isRequired>
+                <InputGroup size="md">
+                  <Input
+                    pr="4.5rem"
+                    type="address"
+                    placeholder="Enter Your Address "
+                    name="address"
+                    variant="flushed"
+                    focusBorderColor="#f16521"
+                    value={formState.address}
+                    onChange={(e) =>
+                      setFormState({ ...formState, address: e.target.value })
+                    }
+                  />
                 </InputGroup>
               </FormControl>
               <Button
@@ -184,7 +203,7 @@ const Signup1 = () => {
                 type="submit"
                 variant="solid"
                 _hover={{}}
-                bg="#f16521"
+                bg="#2bb673"
                 color={"white"}
               >
                 Yeah! I Want Credits
@@ -192,7 +211,7 @@ const Signup1 = () => {
             </form>
             <Box>
               By registering you agree to our
-              <Link alignSelf="start" href="#" textDecoration="underline">
+              <Link alignSelf="start" Link="/login" textDecoration="underline">
                 Terms & Conditions
               </Link>
             </Box>
@@ -205,7 +224,7 @@ const Signup1 = () => {
                 fontSize="0.9rem"
                 variant="outline"
               >
-                <NavLink to="/login1">Existing User? Log In</NavLink>
+                <NavLink to="/login">Existing User? Log In</NavLink>
               </Button>
             </Box>
             <Box w="100%">

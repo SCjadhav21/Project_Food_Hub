@@ -11,19 +11,21 @@ import {
   MenuList,
   Show,
   Text,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { RiLinksLine } from "react-icons/ri";
 import { FaFacebook, FaTwitter } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import Login from "./Login";
 import Image from "../foodHub2.png";
 import SignUp from "./Signup";
-import '../style/Navbar.css'
+import "../style/Navbar.css";
+import { AuthContext } from "../Context/AuthContext";
 const Navbar = () => {
-  const [text, setText] = useState("");
-  const [user, setUser] = useState("");
+  const { auth, handleLogout } = useContext(AuthContext);
+
   return (
     <>
       <Show above="md">
@@ -53,17 +55,22 @@ const Navbar = () => {
               <Box
                 display="flex"
                 style={{
-                  padding: "1rem",
+                  margin: "auto",
+                  display: "flex",
+                  columnGap: "30px",
+                  justifyContent: "center",
+                  textAlign: "center",
                 }}
               >
-                <Login
-                  ml="1rem"
-                  text={text}
-                  user={user}
-                  setUser={setUser}
-                  setText={setText}
-                />
+                {auth.isAuth ? (
+                  <Button onClick={handleLogout}>Logout</Button>
+                ) : (
+                  <Button>
+                    <Link to="/login">Login</Link>
+                  </Button>
+                )}
 
+                <br />
                 <SignUp />
               </Box>
               <Text
@@ -72,7 +79,7 @@ const Navbar = () => {
                   fontWeight: "bold",
                   fontFamily: "sans-serif",
                 }}
-              >{`Welcome to kindmeal ${user}`}</Text>
+              >{`Welcome to kindmeal ${auth.username}`}</Text>
             </Box>
           </Box>
           <Box
@@ -139,18 +146,12 @@ const Navbar = () => {
       </Show>
       <Hide above="md">
         <Box
-          // style={{backgroundColor:back=="black"?"#5C6471:""}}
           position="fixed"
           pr="10px"
           zIndex={10}
           bgColor="#fff"
           w="full"
           color="#fff"
-          //   style={{
-          //     backgroundColor: back === 1 ? "#151716" : "",
-          //     height: back === 1 ? "80px" : "100px",
-          //   }}
-          // border="1px solid black"
           display="flex"
           justifyContent="space-between"
           alignItems="center"
@@ -179,85 +180,64 @@ const Navbar = () => {
                 fontWeight="bold"
               >
                 <MenuItem bgColor="#2BB673" margin={1}>
-                  <NavLink
-                    className="navlink2"
-                    // onClick={() => handelClick(1)}
-                    // style={{ color: linkno === 1 ? "red" : "" }}
-                    to="/"
-                  >
+                  <NavLink className="navlink2" to="/">
                     Home
                   </NavLink>
                 </MenuItem>
                 <MenuItem bgColor="#2BB673" margin={1}>
-                  <NavLink
-                    className="navlink2"
-                    // onClick={() => handelClick(2)}
-                    // style={{ color: linkno === 2 ? "red" : "" }}
-                    to="/meal"
-                  >
+                  <NavLink className="navlink2" to="/meal">
                     KindMeal
                   </NavLink>
                 </MenuItem>
                 <MenuItem bgColor="#2BB673" margin={1}>
-                  <NavLink
-                    className="navlink2"
-                    // onClick={() => handelClick(2)}
-                    // style={{ color: linkno === 2 ? "red" : "" }}
-                    to="/kindmoments"
-                  >
+                  <NavLink className="navlink2" to="/kindmoments">
                     KindMoment
                   </NavLink>
                 </MenuItem>
                 <MenuItem bgColor="#2BB673" margin={1}>
-                  <NavLink
-                    className="navlink2"
-                    // onClick={() => handelClick(2)}
-                    // style={{ color: linkno === 2 ? "red" : "" }}
-                    to="/recipes"
-                  >
+                  <NavLink className="navlink2" to="/recipes">
                     Recipes
                   </NavLink>
                 </MenuItem>
                 <MenuItem bgColor="#2BB673" margin={1}>
-                  <NavLink
-                    className="navlink2"
-                    // onClick={() => handelClick(3)}
-                    // style={{ color: linkno === 3 ? "red" : "" }}
-                    to="/directory"
-                  >
+                  <NavLink className="navlink2" to="/directory">
                     Directory
                   </NavLink>
                 </MenuItem>
 
                 <MenuItem bgColor="#2BB673" margin={1}>
-                  <NavLink
-                    className="navlink2"
-                    // onClick={() => handelClick(4)}
-                    // style={{ color: linkno === 4 ? "red" : "" }}
-                    to="/article"
-                  >
+                  <NavLink className="navlink2" to="/article">
                     Articles
                   </NavLink>
                 </MenuItem>
                 <MenuItem bgColor="#2BB673" margin={1}>
-                  <NavLink
-                    className="navlink2"
-                    // onClick={() => handelClick(5)}
-                    // style={{ color: linkno === 5 ? "red" : "" }}
-                    to="/mobileapp"
-                  >
+                  <NavLink className="navlink2" to="/mobileapp">
                     Mobile App
                   </NavLink>
                 </MenuItem>
                 <MenuItem bgColor="#2BB673" margin={1}>
-                  <NavLink
-                    className="navlink2"
-                    // onClick={() => handelClick(5)}
-                    // style={{ color: linkno === 5 ? "red" : "" }}
-                    to="/help"
-                  >
+                  <NavLink className="navlink2" to="/help">
                     Help
                   </NavLink>
+                </MenuItem>
+
+                <MenuItem margin={1} bgColor="#2BB673">
+                  {auth.isAuth ? (
+                    <Button
+                      onClick={handleLogout}
+                      backgroundColor="#f3f4f6"
+                      color={"black"}
+                    >
+                      Logout
+                    </Button>
+                  ) : (
+                    <Button backgroundColor="#f3f4f6" color={"black"}>
+                      <Link to="/login">Login</Link>
+                    </Button>
+                  )}
+                </MenuItem>
+                <MenuItem bgColor="#2BB673" margin={1}>
+                  <SignUp backgroundColor="#2BB673" />
                 </MenuItem>
               </MenuList>
             </Menu>

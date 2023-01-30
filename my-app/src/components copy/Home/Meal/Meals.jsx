@@ -1,30 +1,64 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import axios from "axios";
-import "./Meals.css";
+
+import "../../../style/Meals.css";
 import Pagination from "./Pagination";
 import { NavLink } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
+import { getMeal } from "../../../Pages/Articles/api";
+
+const getCurrentPageFromUrl = (value) => {
+  value = Number(value);
+  if (typeof value === "number" && value <= 0) {
+    value = 1;
+  }
+  if (!value) {
+    value = 1;
+  }
+  return value;
+};
 const Meals = () => {
   const [data, setData] = useState([]);
-  const [page, setPage] = useState(1);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const initialPage = getCurrentPageFromUrl(searchParams.get("page"));
+  const [page, setPage] = useState(initialPage);
+  const [find, setfind] = useState("");
+  const [country, setCountry] = useState("");
+  const fetchCitiesDataAndUpdate = (page, find, country) => {
+    getMeal({ page, limit: 6, find, country })
+      .then((res) => setData(res.data))
+      .catch((err) => console.log("error is ", err))
+      .finally(() => console.log("call completed"));
+  };
+
   useEffect(() => {
-    const getData = async () => {
-      let res = await axios.get(
-        `https://reduxapi.onrender.com/meal?_page=${page}&_limit=10`
-      );
-      console.log(res);
-      setData(res.data);
-    };
-    getData();
+    fetchCitiesDataAndUpdate(page, find, country);
+  }, [page, find, country]);
+
+  useEffect(() => {
+    setSearchParams({ page });
   }, [page]);
+
+  const getData = (el) => {
+    setfind(el);
+  };
+  const getcount = (el) => {
+    setCountry(el);
+  };
+
+
   return (
     <>
-      <Pagination
-        total={7}
-        current={page}
-        onchange={(value) => setPage(value)}
-      />
+      <br />
+      <div style={{ margin: "auto", width: "70%" }}>
+        <Pagination
+          total={7}
+          current={page}
+          onChange={(value) => setPage(value)}
+        />
+        <br />
+      </div>
       <div className="meals">
         {data.map((items) => {
           return (
@@ -69,6 +103,11 @@ const Meals = () => {
             </div>
           );
         })}
+        <Pagination
+          total={6}
+          current={page}
+          onChange={(value) => setPage(value)}
+        />
       </div>
     </>
   );

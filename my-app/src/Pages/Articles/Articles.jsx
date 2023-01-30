@@ -2,9 +2,9 @@ import Directory1 from "./Articles1";
 import { Box, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import Card from "./Cart";
 import { useEffect, useState } from "react";
-import { getaddress } from "./api";
+import { getAddress } from "./api";
 import Pagination from "./Pagination";
-import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import {  useSearchParams } from "react-router-dom";
 const getCurrentPageFromUrl = (value) => {
   value = Number(value);
   if (typeof value === "number" && value <= 0) {
@@ -24,7 +24,7 @@ const Article = () => {
   const [find, setfind] = useState("");
   const [country, setCountry] = useState("");
   const fetchCitiesDataAndUpdate = (page, find, country) => {
-    getaddress({ page, limit: 6, find, country })
+    getAddress({ page, limit: 6, find, country })
       .then((res) => setData(res.data))
       .catch((err) => console.log("error is ", err))
       .finally(() => console.log("call completed"));

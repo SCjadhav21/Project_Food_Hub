@@ -26,6 +26,7 @@ import SignleRecipePage from "../Pages/Recipes/SignleRecipePage";
 import CoustomerSignup from "../Pages/Login_SignUp/Coustomer/CoustomerSignup"
 import Signup1 from "../Components/Signup1";
 import Login1 from "../Components/Login1";
+import Login from "../Components/Login";
 
 
 
@@ -39,7 +40,7 @@ function AllRoutes() {
       <Route path="foodmenu" element={<FoodMenu />}></Route>
 
       <Route path="/meal" element={<Meal />}></Route>
-      <Route path="/meals" element={<SigleUserPage />}></Route>
+      <Route path="/meal/:id" element={<SigleUserPage />}></Route>
 
       {/* prakash */}
       <Route path="/recipes" element={<Recipes />}></Route>
@@ -52,14 +53,14 @@ function AllRoutes() {
       ></Route>
       <Route path="/directory/:nearbyshope" element={<NearbyShops />}></Route>
       <Route path="/help" element={<Help />}></Route>
-      <Route path="/login1" element={<Login1 />}></Route>
+      <Route path="/login" element={<Login1 />}></Route>
+     
 
       {/* pooja */}
       <Route path="/article" element={<Article />}></Route>
       <Route path="/article/:id" element={<SingleArticlePage />}></Route>
       <Route path="/kindmoments" element={<Kind />}></Route>
       <Route path="/kindmoments/:id" element={<SingleKindPage />}></Route>
-      
       <Route path="/Signup1" element={<Signup1/>}></Route>
 
       {/* suraj */}

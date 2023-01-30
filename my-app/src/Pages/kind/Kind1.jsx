@@ -30,7 +30,7 @@ let IntialData = {
   description: "",
 };
 
-const Directory1 = (props) => {
+const Kind1 = (props) => {
   let [kindMoment, setKindMoment] = useState(IntialData);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [name, setName] = useState("");
@@ -69,77 +69,7 @@ const Directory1 = (props) => {
     }
   };
 
-  return (
-    <Box width="100%" bg="#f0f0f0">
-      <Box
-        width="80%"
-        margin="auto"
-        textAlign="left"
-        padding="40px"
-        textColor=""
-      >
-        <Stack spacing={4}>
-          <Text fontSize="3xl">
-            KindMoments |Saving Lives with Yummy Photos
-          </Text>
-          <Text fontSize="l">
-            Discover new, delicious meat-free cuisines enjoyed by other
-            compassionate food lovers. Share your interesting KindMoments, and
-            build your own fans and followers to encourage kind, healthy meals.
-          </Text>
-          <Text fontSize="l">
-            Download our mobile app to easily showcase your masterpieces and
-            interact with food lovers.
-          </Text>
-          <Text fontSize="l">Get started sharing your tasty moments now.</Text>
-
-          {/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */}
-          <Stack direction={["column", "row"]} spacing="34px" width={"500"}>
-            <Box h="20px">
-              <form onSubmit={handlesubmit}>
-                <Input
-                  placeholder="Search Shop Name"
-                  size="md"
-                  width="100%"
-                  padding="20px"
-                  bg="white"
-                  fontSize="15px"
-                  name="search"
-                  onChange={(e) => setName(e.target.value)}
-                  value={name}
-                  type="text"
-                />
-              </form>
-            </Box>
-
-            <Box height="20px" fontSize="15px" margin="auto" padding={"5px"}>
-              <select
-                name="country"
-                value={country}
-                onClick={handlesubmit1}
-                onChange={(e) => setCountry(e.target.value)}
-              >
-                <option padding="15px">All Shops in Malashiya</option>
-                <option value="Berjaye Cafe">Berjaye Cafe</option>
-                <option value="Berjaye Cafe">Berjaye Cafe</option>
-                <option value="Ba-Xian Cafe">Ba-Xian Cafe</option>
-                <option value="Arti Wodless Cafe">Arti Wodless Cafe</option>
-              </select>
-            </Box>
-
-            <Box h="40px" marginLeft={"10px"}>
-              <Button
-                bg="red"
-                borderRadius="5px"
-                color="White"
-                fontSize="22px"
-                size={["sm", "sm", "md"]}
-                width={["100px", "120px", "120px"]}
-              >
-                Search Shop
-              </Button>
-            </Box>
-
+  return (<>
             <Box width="15%">
               <Button
                 bg="green"
@@ -241,10 +171,9 @@ const Directory1 = (props) => {
                 </ModalContent>
               </Modal>
             </Box>
-          </Stack>
-        </Stack>
-      </Box>
-    </Box>
+       
+      
+    </>
   );
 };
-export default Directory1;
+export default Kind1;
