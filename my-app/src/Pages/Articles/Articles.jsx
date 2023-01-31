@@ -1,10 +1,10 @@
 import Directory1 from "./Articles1";
-import { Box, SimpleGrid, Stack, Text } from "@chakra-ui/react";
+import { Box, SimpleGrid, Skeleton, Stack, Text } from "@chakra-ui/react";
 import Card from "./Cart";
 import { useEffect, useState } from "react";
 import { getAddress } from "./api";
 import Pagination from "./Pagination";
-import {  useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 const getCurrentPageFromUrl = (value) => {
   value = Number(value);
   if (typeof value === "number" && value <= 0) {
@@ -23,11 +23,22 @@ const Article = () => {
   const [page, setPage] = useState(initialPage);
   const [find, setfind] = useState("");
   const [country, setCountry] = useState("");
+  const [loading, setLoading] = useState(false);
   const fetchCitiesDataAndUpdate = (page, find, country) => {
+    setLoading(true);
     getAddress({ page, limit: 6, find, country })
-      .then((res) => setData(res.data))
-      .catch((err) => console.log("error is ", err))
-      .finally(() => console.log("call completed"));
+      .then((res) => {
+        setData(res.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log("error is ", err);
+        setLoading(false);
+      })
+      .finally(() => {
+        console.log("call completed");
+        setLoading(false);
+      });
   };
 
   useEffect(() => {
@@ -44,9 +55,63 @@ const Article = () => {
   const getcount = (el) => {
     setCountry(el);
   };
+  console.log(loading);
+  if (loading) {
+    return (
+      <Stack>
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
 
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+      </Stack>
+    );
+  }
   return (
-    <Box  pt={["60px", " ", "160px"]}>
+    <Box pt={["60px", " ", "160px"]}>
       {/* ################################################################# */}
       <Directory1 onSubmit={getData} onSubmit1={getcount} />
       {/* ########################################################################## */}
@@ -60,7 +125,7 @@ const Article = () => {
         padding={10}
         gap="30px"
       >
-        <Text fontSize="20px">Page</Text>
+        
         <Pagination
           total={6}
           current={page}

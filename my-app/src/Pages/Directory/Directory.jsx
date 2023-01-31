@@ -5,7 +5,7 @@ import "../../style/Directory.css";
 import axios from "axios";
 import RecipesAndDirectoryPagination from "../../Components/RecipesAndDirectoryPagination";
 import { Link } from "react-router-dom";
-import { Button } from "@chakra-ui/react";
+import { Button, Skeleton, Stack } from "@chakra-ui/react";
 import { useSearchParams } from "react-router-dom";
 
 const getData = (url) => {
@@ -24,16 +24,25 @@ const getCurrentPageFromUrl = (value) => {
 export default function Directory() {
   const [arr, setArr] = useState([]);
   const [text, setText] = useState();
-
+  const [loading, setLoading] = useState(false);
   const [que, setQue] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
   const initialPage = getCurrentPageFromUrl(searchParams.get("page"));
   const [page, setPage] = useState(initialPage);
 
   useEffect(() => {
+    setLoading(true);
     getData(
       `https://mock-server-app-pzg9.onrender.com/kindmealDirectory?_page=${page}&_limit=10&q=${que}`
-    ).then((res) => setArr(res.data));
+    )
+      .then((res) => {
+        setArr(res.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setLoading(false);
+      });
   }, [que, page]);
   useEffect(() => {
     console.log(que);
@@ -50,6 +59,45 @@ export default function Directory() {
   const handelSearchrecipes1 = (text1) => {
     setQue(text1);
   };
+
+  if (loading) {
+    return (
+      <Stack>
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+      </Stack>
+    );
+  }
 
   return (
     <>

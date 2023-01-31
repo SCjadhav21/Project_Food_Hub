@@ -9,6 +9,7 @@ import Pagination from "../Articles/Pagination";
 import { Link } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import Kind1 from "./Kind1";
+import { Skeleton, Stack } from "@chakra-ui/react";
 
 const getData = (url) => {
   return axios.get(url);
@@ -63,9 +64,44 @@ export default function Kind() {
   const handelSearchrecipes1 = (text1) => {
     setQue(text1);
   };
-  console.log(loading);
+  
   if (loading) {
-    return <h1>Loding......</h1>
+    return (
+      <Stack>
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+      </Stack>
+    );
   }
 
   return (
