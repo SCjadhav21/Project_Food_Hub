@@ -27,6 +27,7 @@ const getCurrentPageFromUrl = (value) => {
 export default function Kind() {
   const [arr, setArr] = useState([]);
   const [text, setText] = useState();
+  const [loading, setLoading] = useState(false);
 
   const [que, setQue] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
@@ -34,9 +35,18 @@ export default function Kind() {
   const [page, setPage] = useState(initialPage);
 
   useEffect(() => {
+    setLoading(true);
     getData(
       `https://kindmeal-db.onrender.com/address?_page=${page}&_limit=10&q=${que}`
-    ).then((res) => setArr(res.data));
+    )
+      .then((res) => {
+        setArr(res.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setLoading(false);
+      });
   }, [que, page]);
   useEffect(() => {
     console.log(que);
@@ -53,6 +63,10 @@ export default function Kind() {
   const handelSearchrecipes1 = (text1) => {
     setQue(text1);
   };
+  console.log(loading);
+  if (loading) {
+    return <h1>Loding......</h1>
+  }
 
   return (
     <>
@@ -91,9 +105,8 @@ export default function Kind() {
           <option value="Wodless Caf">Wodless Caf</option>
         </select>
         <button onClick={handelsearchrecipes}>Search Cafe</button>
-       
-          <Kind1 />
-       
+
+        <Kind1 />
       </div>
 
       <Pagination
