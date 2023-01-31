@@ -44,9 +44,9 @@ const Login1 = () => {
   };
 
   const handleClick = () => setShow(!show);
-//   if (auth.isAuth) {
-//     return <Navigate to="/" />;
-//   }
+  if (auth.isAuth) {
+    return <Navigate to="/" />;
+  }
   return (
     <Flex
       px="6"
@@ -55,26 +55,28 @@ const Login1 = () => {
       mx="auto"
       pt={"250px"}
     >
-      <Show above="md">
-        <Box
-          w="45%"
-          background="url(https://ii1.pepperfry.com/images/new_login_modal_bg_2020.jpg)  bottom no-repeat #fffdf6"
-        >
-          <Heading color="#f16521" as="h4" fontSize="1.063rem">
-            You Will Be Able To Track Your Order, Use Wishlist & More.
-          </Heading>
-        </Box>
-      </Show>
-      <Box w={{ base: "100%", md: "40%", lg: "55%" }}>
+      <Box w={{ base: "100%" }}>
         <VStack w="100%" rowGap="10rem">
           <VStack w="100%">
+            <Heading color="#f16521" as="h3" fontSize="2.063rem">
+              Join KindMeal For FREE Now
+            </Heading>
+            <Heading as="h5" fontSize="1.063rem">
+              Member Login
+            </Heading>
+            <br />
+            <br />
+            <br />
             <form
               style={{
-                width: "100%",
+                width: "70%",
                 rowGap: "10px",
                 display: "flex",
                 flexDirection: "column",
-                gap: "10px",
+                gap: "50px",
+                border: "1px solid black",
+                borderRadius: "10px",
+                padding: "40px",
               }}
               onSubmit={handleSubmit}
             >
@@ -91,11 +93,6 @@ const Login1 = () => {
                     }
                     focusBorderColor="#f16521"
                   />
-                  <InputRightElement width="7rem">
-                    <Button h="1.75rem" size="xs">
-                      LOGIN USING OTP
-                    </Button>
-                  </InputRightElement>
                 </InputGroup>
               </FormControl>
               <FormControl isRequired>
@@ -133,17 +130,17 @@ const Login1 = () => {
               >
                 Login
               </Button>
+              <Link
+                alignSelf="start"
+                href="#"
+                textDecoration="underline"
+                color="#f16521"
+              >
+                Forgot Password
+              </Link>
             </form>
-            <Link
-              alignSelf="start"
-              href="#"
-              textDecoration="underline"
-              color="#f16521"
-            >
-              Forgot Password
-            </Link>
           </VStack>
-          <VStack w="100%">
+          <VStack w="70%" margin={"auto"}>
             <Box w="100%">
               <Button
                 w="100%"

@@ -13,14 +13,16 @@ import {
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
+import { Link, NavLink } from "react-router-dom";
 import React from "react";
 import Image from "../foodHub2.png";
 import { AuthContext } from "../Context/AuthContext";
+import Login1 from "./Login1";
 
 const Login = ({ text, user, setText, setUser }) => {
   console.log(text, user, setText, setUser);
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { auth, handleLogin } = React.useContext(AuthContext);
+  const { auth, handleLogout } = React.useContext(AuthContext);
 
   const handleUser = () => {
     setUser(text);
@@ -29,9 +31,11 @@ const Login = ({ text, user, setText, setUser }) => {
   return (
     <>
       {auth.isAuth ? (
-        <Button onClick={onOpen}>Login</Button>
+        <Button onClick={handleLogout}>Logout</Button>
       ) : (
-        <Button onClick={onOpen}>Logout</Button>
+        <Button onClick={onOpen}>
+          <Link to="/login">Login</Link>
+        </Button>
       )}
 
       <Modal isOpen={isOpen} onClose={onClose}>
@@ -43,28 +47,7 @@ const Login = ({ text, user, setText, setUser }) => {
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <FormControl>
-              <Input
-                value={text}
-                mb="10px"
-                type="text"
-                placeholder="UserName"
-                onChange={(e) => setText(e.target.value)}
-              />
-              <Input mb="10px" type="email" placeholder="Your Email" />
-              <Input mb="10px" type="password" placeholder="Your Password" />
-              <Button
-                p="15px 90px 15px 90px"
-                ml="80px"
-                bgColor="#04be5a"
-                color="#fff"
-                mb="10px"
-                fontSize="2xl"
-                onClick={handleUser}
-              >
-                Login
-              </Button>
-            </FormControl>
+            <Login1 />
           </ModalBody>
 
           <ModalFooter>

@@ -7,26 +7,50 @@ import { AiOutlineClockCircle, AiTwotoneMessage } from "react-icons/ai";
 import { BsFillHeartFill } from "react-icons/bs";
 import RecipesAndDirectoryPagination from "../../Components/RecipesAndDirectoryPagination";
 import { Link } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 const getData = (url) => {
   return axios.get(url);
 };
+const getCurrentPageFromUrl = (value) => {
+  value = Number(value);
+  if (typeof value === "number" && value <= 0) {
+    value = 1;
+  }
+  if (!value) {
+    value = 1;
+  }
+  return value;
+};
 
 export default function Recipes() {
   const [arr, setArr] = useState([]);
-  const [text, setText] = useState("");
-  const [que, setQue] = useState(text);
-  const [page, setpage] = useState(1);
+  const [text, setText] = useState("text");
+  
+  const [que, setQue] = useState('');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const initialPage = getCurrentPageFromUrl(searchParams.get("page"));
+  const [page, setPage] = useState(initialPage);
 
   useEffect(() => {
     getData(
-      `https://mock-server-app-pzg9.onrender.com/kindmealRecipes?_page=${page}&_limit=12&q=${que}`
+      `https://mock-server-app-pzg9.onrender.com/kindmealRecipes?_page=${page}&_limit=10&q=${que}`
     ).then((res) => setArr(res.data));
   }, [que, page]);
-
+  useEffect(() => {
+    console.log(que);
+    if (que.length > 0) {
+      setSearchParams({ page, que });
+    } else {
+      setSearchParams({ page });
+    }
+  }, [page, que]);
 
   const handelsearchrecipes = () => {
     setQue(text);
+  };
+  const handelSearchrecipes1 = (text1) => {
+    setQue(text1);
   };
 
   return (
@@ -49,43 +73,26 @@ export default function Recipes() {
           placeholder="Search Recipe or User Name"
           onChange={(e) => setText(e.target.value)}
         />
-        <select onChange={(e) => setText(e.target.value)}>
+        <select onChange={(e) => handelSearchrecipes1(e.target.value)}>
           <option value="">All Calegories</option>
-          <option value="appetizers">Appetizers</option>
-          <option value="beverages">Beverages</option>
-          <option value="breakfast">Breakfast</option>
-          <option value="breads">Breads</option>
-          <option value="condiments">Condiments</option>
-          <option value="desserts">Desserts</option>
-          <option value="snacks">Snacks</option>
-          <option value="main Dishes">Main Dishes</option>
-          <option value="salads">Salads</option>
-          <option value="Side Dishes">Side Dishes</option>
-          <option value="Soups">Soups</option>
+          <option value="Hokkaido Cheese Tart">Hokkaido Cheese Tart</option>
+          <option value="Handy Zing Chopped Salad">Handy Zing Chopped Salad</option>
+          <option value="The Rock">The Rock</option>
+          <option value="Ceasar Dressing">Ceasar Dressing</option>
+          <option value="EASY 10 Minute Dinner Recipes">EASY 10 Minute Dinner Recipes</option>
+          <option value="Peanut Butter Cups">Peanut Butter Cups</option>
+         
         </select>
         <button onClick={handelsearchrecipes}>Search Recipes</button>
         <button>
           <Link to="/AddRacipes">Share My Recipe </Link>
         </button>
       </div>
-      <div className="searchbtnsRecipe">
-        <p>All Categories</p>
-        <p>Appetizers</p>
-        <p>Beverages</p>
-        <p>Breakfast</p>
-        <p>Breads</p>
-        <p>Condiments</p>
-        <p>Desserts</p>
-        <p>Snacks</p>
-        <p>Main Dishes</p>
-        <p>Salads</p>
-        <p>Side Dishes</p>
-        <p>Soups</p>
-      </div>
+      
       <RecipesAndDirectoryPagination
         total={4}
         current={page}
-        onchange={(value) => setpage(value)}
+        onchange={(value) => setPage(value)}
       />
       <div className="recipecontainer">
         {arr.map((ele) => (
@@ -96,7 +103,7 @@ export default function Recipes() {
                 <p>{ele.channel}</p>
               </div>
               <div>
-                <button >
+                <button>
                   <Link to={`/recipes/${ele.id}`}>View</Link>
                 </button>
               </div>
@@ -126,7 +133,7 @@ export default function Recipes() {
       <RecipesAndDirectoryPagination
         total={4}
         current={page}
-        onchange={(value) => setpage(value)}
+        onchange={(value) => setPage(value)}
       />
     </>
   );

@@ -36,6 +36,7 @@ export default function AuthContextProvider({ children }) {
       });
     }
   }, []);
+
   const handleLogout = () => {
     setAuth({ isAuth: false, token: null, username: null });
     localStorage.removeItem("token");

@@ -6,24 +6,49 @@ import axios from "axios";
 import RecipesAndDirectoryPagination from "../../Components/RecipesAndDirectoryPagination";
 import { Link } from "react-router-dom";
 import { Button } from "@chakra-ui/react";
+import { useSearchParams } from "react-router-dom";
 
+const getData = (url) => {
+  return axios.get(url);
+};
+const getCurrentPageFromUrl = (value) => {
+  value = Number(value);
+  if (typeof value === "number" && value <= 0) {
+    value = 1;
+  }
+  if (!value) {
+    value = 1;
+  }
+  return value;
+};
 export default function Directory() {
-  const [page, setPage] = useState(1);
   const [arr, setArr] = useState([]);
-  const [text, setText] = useState("");
-  const [que, setQue] = useState(text);
+  const [text, setText] = useState();
+
+  const [que, setQue] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const initialPage = getCurrentPageFromUrl(searchParams.get("page"));
+  const [page, setPage] = useState(initialPage);
 
   useEffect(() => {
-    axios
-      .get(
-        `https://mock-server-app-pzg9.onrender.com/kindmealDirectory?_page=${page}&_limit=10&q=${que}`
-      )
-      .then((res) => setArr(res.data));
+    getData(
+      `https://mock-server-app-pzg9.onrender.com/kindmealDirectory?_page=${page}&_limit=10&q=${que}`
+    ).then((res) => setArr(res.data));
+  }, [que, page]);
+  useEffect(() => {
+    console.log(que);
+    if (que.length > 0) {
+      setSearchParams({ page, que });
+    } else {
+      setSearchParams({ page });
+    }
   }, [page, que]);
 
-  const searchDirectory = () => {
+  const handelsearchrecipes = () => {
     setQue(text);
-    console.log(arr);
+  };
+  const handelSearchrecipes1 = (text1) => {
+    setQue(text1);
   };
 
   return (
@@ -47,20 +72,21 @@ export default function Directory() {
           placeholder="Search Shop Name"
           onChange={(e) => setText(e.target.value)}
         />
-        <select name="" id="" onChange={(e) => setText(e.target.value)}>
-          <option value="">All Shops In Malaysia</option>
-          <option value="Selangor">Selangor</option>
-          <option value="KualaLumpur">Kuala Lumpur</option>
-          <option value="Johor">Johor</option>
-          <option value="Penang">Penang</option>
-          <option value="Kedah">Kedah</option>
-          <option value="Melaka">Melaka</option>
-          <option value="NegeriSembilan">Negeri Sembilan</option>
-          <option value="Pahang">Pahang</option>
-          <option value="Perak">Perak</option>
-          <option value="Terengganu">Terengganu</option>
+        <select onChange={(e) => handelSearchrecipes1(e.target.value)}>
+          <option value="">All Calegories</option>
+          <option value="Ador Cafe">Ador Cafe</option>
+          <option value="Alam N-Ion">Alam N-Ion</option>
+          <option value="TBeyond Veggie - TTDI Branch">
+            Beyond Veggie - TTDI Branch
+          </option>
+          <option value="Boye Vegetarian Cafe">Boye Vegetarian Cafe</option>
+          <option value="Cabana Acai Bar">Cabana Acai Bar</option>
+          <option value="Alice Kitchen By Yishensu">
+            Alice Kitchen By Yishensu
+          </option>
         </select>
-        <button onClick={searchDirectory}>Search Shops</button>
+
+        <button onClick={handelsearchrecipes}>Search Shops</button>
 
         <Link to="/addShop">
           {" "}
@@ -77,12 +103,12 @@ export default function Directory() {
           </Button>
         </Link>
       </div>
-      <div className="extrasearch">
+      {/* <div className="extrasearch">
         <p>Vegetarian Directory</p>
         <p>Featured Restaurants</p>
         <p>Food Menu</p>
         <p>Food Map</p>
-      </div>
+      </div> */}
       <RecipesAndDirectoryPagination
         total={4}
         current={page}
