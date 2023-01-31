@@ -8,6 +8,7 @@ import { BsFillHeartFill } from "react-icons/bs";
 import RecipesAndDirectoryPagination from "../../../Components/RecipesAndDirectoryPagination";
 import { Link } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
+import { Skeleton, Stack } from "@chakra-ui/react";
 
 const getData = (url) => {
   return axios.get(url);
@@ -26,16 +27,21 @@ const getCurrentPageFromUrl = (value) => {
 export default function Meal() {
   const [arr, setArr] = useState([]);
   const [text, setText] = useState("text");
-
+  const[loading ,setLoading]=useState(false)
   const [que, setQue] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
   const initialPage = getCurrentPageFromUrl(searchParams.get("page"));
   const [page, setPage] = useState(initialPage);
 
   useEffect(() => {
+    setLoading(true)
     getData(
       `https://reduxapi.onrender.com/meal?_page=${page}&_limit=10&q=${que}`
-    ).then((res) => setArr(res.data));
+    ).then((res) => {setArr(res.data)
+    setLoading(false)}).catch((err) => {
+      console.log(err);
+      setLoading(false);
+    });
   }, [que, page]);
   useEffect(() => {
     console.log(que);
@@ -52,6 +58,60 @@ export default function Meal() {
   const handelSearchrecipes1 = (text1) => {
     setQue(text1);
   };
+  if (loading) {
+    return (
+      <Stack>
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+      </Stack>
+    );
+  }
 
   return (
     <>

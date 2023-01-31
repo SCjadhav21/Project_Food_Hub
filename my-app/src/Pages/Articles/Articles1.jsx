@@ -2,8 +2,7 @@ import {
   Text,
   Stack,
   Box,
-  Input,
-  Button,
+  
 } from "@chakra-ui/react";
 import{useState} from "react"
 
