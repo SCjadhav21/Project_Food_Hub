@@ -21,7 +21,7 @@ KindMeal.my is Malaysia's leading meat-free lifestyle platform, indulging you wi
 
 Deployed with netlify app 
 ```
-https://kind-meal.netlify.app/
+iridescent-biscochitos-61ac19.netlify.app/
  ```
 
 ### <u>Run Locally</u>
@@ -50,6 +50,7 @@ go to http://localhost:3000
 1. A user can register his account on the website
 2. User can log in using their mobile number through otp authentication
 3. User can search from the variety of products available 
+4. User can shear there moments and recipies
 4. User can filter and sort their search on various parameters, i.e. price, relavance, and many more
 5. User can select the Quantity while purchasing any product
 6. User can checkout with razor's payment gateway through Card, UPI, Netbanking, etc. 
@@ -58,7 +59,7 @@ go to http://localhost:3000
 
  
  Click the link to view project: 
- <a href="https://kind-meal.netlify.app/">Kind-Meal</a>
+ <a href="iridescent-biscochitos-61ac19.netlify.app/">Kind-Meal</a>
   
 ## Lessons Learned
 
